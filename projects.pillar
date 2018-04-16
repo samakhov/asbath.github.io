@@ -1,0 +1,27 @@
+{
+	"page_title" : "Projects"
+}
+
+!! Projects
+
+During My Internship, I am working on two (2) principal projects : 
+
+!! Pillar
+
+A markup syntax and associated tools to write and generate documentation, books, slide-based presentations, html pages.The Rmod team is managing to provide a new release of this tool. Then they are refactoring the application. Then I will participate to the reingeering of the Pillar. We are also going to add some features to the tool. 
+
+More on Pillar *https://ci.inria.fr/pharo-contribution/job/EnterprisePharoBook/lastSuccessfulBuild/artifact/book-result/PillarChap/Pillar.html*
+
+The project *https://github.com/pillar-markup/pillar/projects/1*
+
+For those wanting to suggest some features, Open issue on *https://github.com/pillar-markup/pillar/issues*
+
+
+
+!! Ecstatic
+
+The second part of my internship is consisting on improving a small tool extract Pillar, Ecstatic for generating static web sites
+based on Pillar syntax. I am going to improve the templates, etc.
+
+More on *http://guillep.github.io/ecstatic/*
+
