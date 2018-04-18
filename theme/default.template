@@ -119,15 +119,6 @@
 
   </div>
 </div>
-	
-    <!--<div class="container text-justify">
-      <section>
-        <h1>{{title}}</h1>
-        <div class="attribution">{{attribution}}</div>
-
-        {{{content}}}
-      </section>
-    </div>-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
