@@ -13,7 +13,7 @@ clonedeploy:
 	git clone -b master `git config --get remote.origin.url` _site
 
 deploy: generate
-	./_scripts/prepare_for_deploy.sh
+	./scripts/prepare_for_deploy.sh
 	cd _site && git push -f origin master
 
 clean:
