@@ -131,7 +131,7 @@
     <!-- Prettify annotated paragraphs-->
     <script src="theme/annotated-paragraphs.js"></script>
 
-	<footer class="site-footer">
+	<footer class="site-footer fixed-bottom">
   <div class="container">
     <p class="powered-by">
 
