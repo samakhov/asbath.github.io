@@ -96,7 +96,7 @@
 
 
 <!-- Projects widget -->
-<section>
+<section style="background-color: rgb(247, 247, 247);">
 <div class="container">
 <div class="row">
   <div class="col-xs-12 col-md-4 section-heading">
