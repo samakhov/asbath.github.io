@@ -115,12 +115,6 @@
   <div class="col-xs-12 col-md-8">
 
 	{{{content}}}
-    
-	{{# github_account}}
-		<i class="fa fa-github"></i>
-		<h2>{{github_account}}</h2>
-	{{/ github_account}}
-
 
   </div>
 </div>
