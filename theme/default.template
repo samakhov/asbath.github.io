@@ -116,7 +116,10 @@
 
 	{{{content}}}
     
-
+	{{# github_account}}
+		<i class="fa fa-github"></i>
+		<h2>{{github_account}}</h2>
+	{{/ github_account}}
 
 
   </div>
