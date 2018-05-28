@@ -14,7 +14,7 @@ clonedeploy:
 
 deploy: generate
 	./scripts/prepare_for_deploy.sh
-	cd _site && git push -f origin master
+	cd _site && git push origin master
 
 clean:
 	rm -rf .ecstatic
