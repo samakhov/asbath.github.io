@@ -1,0 +1,23 @@
+introduction:
+- vendre le sujet
+- 2 lignes de chaque section et avantages
+
+contexte:
+- Pharo 
+- Pillar
+- HTML, static sites
+
+problema
+
+
+Solution
+- what has been done and why
+
+- what has been learned
+	technical
+	work organisation
+	design
+
+
+Conclusion
+- intro à l'envers
