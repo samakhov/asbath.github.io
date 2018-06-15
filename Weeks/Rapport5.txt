@@ -1,0 +1,12 @@
+Principales tâches effectuées
+- Réecriture de certains tests
+- Gestion des références à l'intérieur des fichiers html (Pas parfaite)
+- En termes de rendu, amélioration du css pour avoir une table of contents plus intuitive
+- Mise en place d'un site personnel
+
+
+Semaine Prochaine
+Etant donné les jours fériés, et que mes encadreurs seront en congés, on ne se rendra donc pas au stage.
+Nous aurons donc un congé d'une semaine.
+
+La semaine suivante nous essayerons de migrer des documents avec les nouveaux templates.

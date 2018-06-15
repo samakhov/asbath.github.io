@@ -1,0 +1,17 @@
+Principales tâches effectuées cette semaine:
+
+- Fixation de bugs : Dans le processus de génération des pages de Pillar, il y avait une erreur dans une des routes,
+ce qui empêchait la génération de certaines images et ressources css. On a donc modifier cela. Ceci était lié aussi à une mauvaise localisation
+du répertoire de lancement du serveur. On a eu donc l'occasion de toucher à un serveur écrit en Pharo : ZincHTTPServer
+
+- Création de nouveaux templates : Nous avons élaboré deux nouveaux archetypes (structures) utilisés pour la génération de documents.
+
+- Sur une des structures élaborées, il y a un menu qui doit être géré dynamiquement. Pour cela cette fin de semaine, on a commencé à écrire du code pour extraire une table of contents avec les tests qui doivent être validés.
+
+
+Semaine prochaine :
+
+- Nous devrons continués sur la table of contents
+- ET peut être tester les expressions contenant du code dans les pages
+
+

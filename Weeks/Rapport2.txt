@@ -1,0 +1,12 @@
+Principales tâches effectuées cette semaine :
+- Rédaction de code Pharo pour gérer la table of contents :
+- En début de semaine nous avons tous réfléchi ensemble sur l'architecture à mettre en place (les classes et patterns qui 
+pourraient être utilisés).
+- Après cela j'ai ainsi commencer à coder le module.
+- En fin de semaine c'est-à-dire aujourd'hui, mon code a été revu, (critiques et améliorations pour qu'il puisse être intégré).
+
+Taĉhes probables pour la semaine prochaine :
+ Mon code ayant été revu, j'aurai à faire certaines amléioratins en début de semaine prochaine
+- Petite réorganisatin du modèle de classes (renommage de méthodes, encapsulation de structures)
+- Rendre les tests plus robustes (Evolution)
+- Commencer à réfléchir à l'intégration du module avec le reste.

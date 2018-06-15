@@ -1,0 +1,10 @@
+Principales tâches effectuées
+- Migration complète de livres écrits en Pillar. Les livres de l'association sur https://github.com/SquareBracketAssociates
+- Automatisation de la génération de livres avec travis: en fait automatiser la génération en livre html et le déploiement sur un site avec gh-pages
+- Compatibilité de Pillar pour les différentes versions de Pharo et correction du travis de Pillar:
+  on a corriger les tests de Pillar en général pour que ça passe sur Pharo 7 et Pharo 6
+- Intégration du nouveau modèle de configuration de Pillar 
+
+Semaine Prochaine
+- Finir le deploiement automatique
+- Faire une documentation indiquant tout le processus pour générer un livre html avec le toc et le déploiement automatique
