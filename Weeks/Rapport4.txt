@@ -1,0 +1,11 @@
+Principales tâches effectuées
+
+- Intégration complète du module de table of contents (Modification de Mustache pour qu'il prenne en compte les toc)
+- Adaptation du module de table of contents avec des templates permettant d'avoir une table of contents (On a arrangé les )
+- Avec cette intégration, on a essayé de revoir le processus de génération des documents, en dégageant certains points à améliorer (trop de dépendances, 
+pas assez de tests)
+
+
+Semaine Prochaine
+- On va essayer de migrer certains documents afin d'améliorer les templates
+- Mettre plus de tests autour

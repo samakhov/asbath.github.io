@@ -1,0 +1,7 @@
+Principales tâches effectuées
+- Revue du template de sites web personnels, ajustement du css et autres éléments graphiques
+- Définition d'une nouvelle annotation permettant dans pillar. Elle permet de pouvoir générer des résumés de plusieurs documents présents dans un dossier particulier.
+Elle sera utile par la suite pour retrouver les blogs ajoutés à un site.
+
+Semaine Prochaine
+- On va compléter l'annotation avec de nouvelles idées et gérer les erreurs.

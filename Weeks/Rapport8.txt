@@ -1,0 +1,8 @@
+Principales tâches effectuées
+- Mise en place complète du déploiement automatique de livres: utilisation de Travis et Github Pages
+- Les livres sont générés automatiquement et déployés sur le branche gh-pages.
+- Rédaction d'un chapitre expliquant comment mettre en place cette architecture de déploiement pour n'importe quel projet. Ce chapitre sera intégré à un Booklet de l'association.
+
+Semaine Prochaine
+- On va éssayer de rendre le déploiement plus complet: en fait actuellement les livres pdf sont aussi générés et déploiés automatiquement sur bintray. On aimerait donc faire un script travis permettant de déployer les deux pdf et htm
+- Lundi : Présentation de l'équipe du travail déjà réalisé

@@ -1,0 +1,9 @@
+Principales tâches effectuées
+- On a mergé les deux versions de travis html et pdf
+- Mise en place d'un template plus adapté pour les sites web personnels : on commence par mettre l'architecture qu'il faire des sites web persos directement depuis Pillar. Ceci nous a amené à corriger des trucs dans
+le moteur de template musatche implémenté dans Pharo.
+- Rédaction du rapport de stage : on se prenait quelques instants pour rédiger. Les encadrants ont suivi les grandes idées à développer.
+
+Semaine Prochaine
+- Définition complète de la génération de sites web personnels
+- Nous allons travailler deux nouvelles modules avec d'autres stagiaires.

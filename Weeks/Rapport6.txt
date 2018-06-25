@@ -1,0 +1,10 @@
+Principales tâches effectuées
+- Migration de certains livres écrits en Pillar
+- Adaptation des fichiers de configuration de ces livres pour s'adapter au nouveau format
+- Découverte de certains bugs liés à l'intégration (références cycliques de certains fichiers) et correction de certaines
+- Correction de templates
+
+Semaine Prochaine
+- Possible intégration complète du modèle de TOC
+- Migration complète de livres
+- Publication automatique de livres

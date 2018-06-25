@@ -1,0 +1,10 @@
+Principales tâches effectuées
+
+- Mise au point (vérification des tests, optimisation de méthodes, etc.) du module de gestion des tables of contents dans Pillar
+- Début d'intégration du module dans la structure de génération de Template : Ici, nous avons commencé à travailler avec l'outil Mustache (réecrit en Pharo) pour la génération de pages statiques. 
+- Aujourd'hui Vendredi, c'était le Sprint Pharo mensuel, donc on a essayé de corriger les bugs reportés sur la version dévelopement Pharo 7 (Exercice très intérressant permettant d'aborder de nouveaux aspects de codage) dans une ambiance conviviale.
+
+
+Semaine prochaine:
+
+- Sûrement intégration complète du module de gestion detable of contents
