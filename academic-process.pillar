@@ -17,8 +17,7 @@ $ echo 'export PATH="$PATH:~/.pillar"' >> ~/.bashrc
 ]]]
 
 
-@@note For the following sections, we need to have a GitHub account. So check *here>https://services.github.com/on-demand/intro-to-github/create-github-account* if you do not have
-a GitHub account.
+@@note For the following sections, we need to have a GitHub account. So check *here>https://services.github.com/on-demand/intro-to-github/create-github-account* if you do not have a GitHub account.
 
 
 !! Setup your GitHub repository
@@ -217,26 +216,26 @@ deploy:
      branch: source
 ]]]
 
-@@note This script globally download Pillar, build the site from pillar files pushed on ""source"" branch and push generated files on ""master"" GitHub branch.
-It means we should create ""master"" and ""source"" branch and only push to ""source"" branch.
+@@note This script globally download Pillar, build the site from pillar files pushed on ""source"" branch and push generated files on ""master"" GitHub branch. It means we should create ""master"" and ""source"" branch and only push to ""source"" branch.
 
-- Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
+We are now going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
 +file://travis_settings.png+
-
 
 On your project Settings in Travis, you have a menu labelled ""Environment variables""
 where you can add variables (those variables will be automatically encrypted).
 
 +file://settings.png+
 
-
-
 After all of that, you can commit your changes to GitHub and wait for your website on:
-""https://myAccount.github.io/myProject""
+""https://myAccount.github.io/""
 
 [[[language=bash
+$ git checkout -b source
 $ git add .
 $ git commit -m "First commit"
-$ git push origin master
+$ git push -u origin source
 ]]]
+
+
+!!! For a project myAccount.github.io/myProject
