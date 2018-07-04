@@ -1,5 +1,8 @@
 This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
 
+
+
+
 !! Setting up the environment
 
 This tutorial requires the development version of pillar that can be found in the ==feature/server-command== branch.
@@ -47,6 +50,11 @@ For that, we need to follow these steps:
 Your GitHub repository is now created.
 
 +file://repo_created.png+
+
+
+
+
+
 
 
 !! Create your pillar website
@@ -160,6 +168,10 @@ Now you should get a page like that:
 +file://teach.png+
 
 @@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*
+
+
+
+
 
 
 !! Publish It on GitHub pages
