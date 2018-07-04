@@ -9,23 +9,23 @@
 	<title>{{title}}</title>
 
     <!-- Highlight js -->
-    <link rel="stylesheet" href="theme/highlightjs/styles/default.css">
-    <link rel="stylesheet" href="theme/highlight-commands.css">
-    <script src="theme/highlightjs/highlight.pack.js"></script>
-    <script src="theme/highlight-commands.js"></script>
+    <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="_support/html/css/highlight-commands.css">
+    <script src="_support/html/highlightjs/highlight.pack.js"></script>
+    <script src="_support/html/js/highlight-commands.js"></script>
 
     <!-- Bootstrap -->
-    <link href="theme/bootstrap.min.css" rel="stylesheet">
-    <link href="theme/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="theme/square-braket-associates.css" rel="stylesheet">
+    <link href="_support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="_support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="_support/html/css/square-braket-associates.css" rel="stylesheet">
 
 
-  	<link href="theme/font-awesome.min.css" rel="stylesheet">
+  	<link href="_support/html/css/font-awesome.min.css" rel="stylesheet">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" media="screen">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.4/css/academicons.min.css">
-    <link rel="stylesheet" href="theme/styles.css">
-    <link rel="icon" type="image/png" href="theme/icon.png">
+    <link rel="stylesheet" href="_support/html/css/styles.css">
+    <link rel="icon" type="image/png" href="_support/html/img/icon.png">
   	<link rel="apple-touch-icon" type="image/png" href="_support/html/img/icon-192.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto+Mono">
 
@@ -51,7 +51,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+  <body>
 
 
 	<div class="article-header">
@@ -79,13 +79,13 @@
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav navbar-right">
-		{{# menu}}
+		{{# toc.children}}
         <li class="nav-item">
-          <a href="{{url}}">
-            <span>{{title}}</span>
+          <a href="{{baseurl}}{{href}}">
+            <span>{{name}}</span>
           </a>
         </li>
-		{{/ menu}}
+		{{/ toc.children}}
       
       </ul>
       
@@ -96,7 +96,7 @@
 
 
 <!-- Projects widget -->
-<section style="background-color: rgb(247, 247, 247);">
+<section>
 <div class="container">
 <div class="row">
   <div class="col-xs-12 col-md-4 section-heading">
@@ -108,7 +108,7 @@
 	
 		<h1>{{name}}</h1>
 		<h3>{{post}}</h3>
-		<p>{{school}}</p>
+		<p class="center-text">{{firm}}</p>
 	</div>
 	{{/ profile}}
   </div>
@@ -120,19 +120,20 @@
 </div>
 </div>
 </section>
+	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="theme/bootstrap.min.js"></script>
+    <script src="_support/html/js/bootstrap.min.js"></script>
 
     <!-- Syntax highlighting of code blocks -->
     <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- Prettify annotated paragraphs-->
-    <script src="theme/annotated-paragraphs.js"></script>
+    <script src="_support/html/js/annotated-paragraphs.js"></script>
 
-	<footer class="site-footer fixed-bottom">
+	<footer class="site-footer">
   <div class="container">
     <p class="powered-by">
 
