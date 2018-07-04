@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="theme" content="hugo-academic">
     <meta name="theme-color" content="primary">
-	<title></title>
+	<title>{{title}}</title>
 
     <!-- Highlight js -->
     <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
@@ -31,7 +31,7 @@
 
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '', 'auto');
+      ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
       ga('require', 'eventTracker');
       ga('require', 'outboundLinkTracker');
       ga('require', 'urlChangeTracker');
@@ -55,7 +55,7 @@
 
 
 	<div class="article-header">
-	<span class="article-header-caption">Personal's Stuff</span>
+	<span class="article-header-caption">{{site_name}}</span>
 </div>
 
 	<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        Personal's Stuff
+        {{site_name}}
       </a>
     </div>
 
@@ -79,37 +79,13 @@
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav navbar-right">
-		
+		{{# toc.children}}
         <li class="nav-item">
-          <a href="/index.html#about me">
-            <span>About me</span>
+          <a href="{{baseurl}}{{href}}">
+            <span>{{name}}</span>
           </a>
         </li>
-		
-        <li class="nav-item">
-          <a href="/projects.html#projects">
-            <span>Projects</span>
-          </a>
-        </li>
-		
-        <li class="nav-item">
-          <a href="/research.html#my research">
-            <span>My Research</span>
-          </a>
-        </li>
-		
-        <li class="nav-item">
-          <a href="/publications.html#my publications">
-            <span>My Publications</span>
-          </a>
-        </li>
-		
-        <li class="nav-item">
-          <a href="/coordinates.html#coordinates">
-            <span>Coordinates</span>
-          </a>
-        </li>
-		
+		{{/ toc.children}}
       
       </ul>
       
@@ -124,38 +100,21 @@
 <div class="container">
 <div class="row">
   <div class="col-xs-12 col-md-4 section-heading">
-	<h1></h1>
+	<h1>{{page_title}}</h1>
 
-    
+    {{# profile}}
 	<div id="profile">
-		<div class="portrait" style="background-image: url('avatar.png');"></div>
+		<div class="portrait" style="background-image: url('{{avatar}}');"></div>
 	
-		<h1>John Doe</h1>
-		<h3>Research Engineer</h3>
-		<p class="center-text">Space Laboratory</p>
+		<h1>{{name}}</h1>
+		<h3>{{post}}</h3>
+		<p class="center-text">{{firm}}</p>
 	</div>
-	
+	{{/ profile}}
   </div>
   <div class="col-xs-12 col-md-8">
 
-	<h1>About me</h1>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus feugiat in ante metus. Arcu cursus vitae congue mauris rhoncus aenean vel. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Quis ipsum suspendisse ultrices gravida dictum fusce ut. Sagittis nisl rhoncus mattis rhoncus urna neque. Aenean euismod elementum nisi quis. Nibh sit amet commodo nulla facilisi nullam vehicula. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Amet mattis vulputate enim nulla. Nam at lectus urna duis convallis convallis. Nisi lacus sed viverra tellus in. Morbi tristique senectus et netus et malesuada fames. Sit amet nisl purus in. Fusce id velit ut tortor pretium.
-</p>
-<p>
-Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer. Urna molestie at elementum eu facilisis sed. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Diam vulputate ut pharetra sit amet aliquam id diam. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Enim ut sem viverra aliquet eget sit amet tellus cras. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Viverra orci sagittis eu volutpat.
-</p>
-<p>
-Proin nibh nisl condimentum id venenatis a. Duis tristique sollicitudin nibh sit amet commodo. Integer quis auctor elit sed vulputate mi sit. Vitae semper quis lectus nulla at volutpat. Eget arcu dictum varius duis at consectetur. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Quam id leo in vitae turpis massa sed. Sit amet risus nullam eget. Tempor nec feugiat nisl pretium fusce id. Ut venenatis tellus in metus vulputate eu scelerisque felis. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Quis imperdiet massa tincidunt nunc. Neque volutpat ac tincidunt vitae. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
-</p>
-<p>
-Amet aliquam id diam maecenas ultricies mi eget mauris. Cursus euismod quis viverra nibh cras pulvinar mattis. At elementum eu facilisis sed odio. Diam volutpat commodo sed egestas egestas fringilla. Sit amet est placerat in. Faucibus a pellentesque sit amet porttitor eget. Mattis aliquam faucibus purus in massa tempor nec feugiat nisl. Viverra aliquet eget sit amet tellus cras adipiscing. Elementum sagittis vitae et leo duis ut diam. Eu volutpat odio facilisis mauris sit amet. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Scelerisque eleifend donec pretium vulputate sapien nec. Tortor vitae purus faucibus ornare.
-</p>
-<p>
-Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Aenean et tortor at risus viverra adipiscing at. Nisl tincidunt eget nullam non nisi. Neque ornare aenean euismod elementum nisi quis eleifend. In nulla posuere sollicitudin aliquam ultrices sagittis. Aliquam id diam maecenas ultricies. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper. Scelerisque purus semper eget duis at tellus at urna condimentum. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Elementum nibh tellus molestie nunc non blandit massa enim. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. Libero justo laoreet sit amet cursus sit amet dictum sit. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi.
-
-</p>
+	{{{content}}}
 
   </div>
 </div>
