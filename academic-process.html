@@ -149,9 +149,7 @@ $ mv build ~/.pillar
 $ echo 'export PATH=&quot;$PATH:~/.pillar&quot;' &gt;&gt; ~/.bashrc </code></pre><figcaption></figcaption></figure>
 
 
-<p class="note">For the following sections, we need to have a GitHub account. So check <a href="https://services.github.com/on-demand/intro-to-github/create-github-account">here</a> if you do not have</p><p>
-a GitHub account.
-</p>
+<p class="note">For the following sections, we need to have a GitHub account. So check <a href="https://services.github.com/on-demand/intro-to-github/create-github-account">here</a> if you do not have a GitHub account.</p>
 
 <h2>Setup your GitHub repository</h2>
 
@@ -366,17 +364,13 @@ deploy:
    on:
      branch: source</code></pre><figcaption></figcaption></figure>
 
-<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files on <strong>master</strong> GitHub branch.</p><p>
-It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.
+<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files on <strong>master</strong> GitHub branch. It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.</p>
+<p>
+We are now going to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis
 </p>
-<ul>
-<li>Generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis</li>
-</ul>
-
 <p>
 <img src="travis_settings.png" alt=""/>
 </p>
-
 <p>
 On your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
 where you can add variables (those variables will be automatically encrypted).
@@ -384,15 +378,17 @@ where you can add variables (those variables will be automatically encrypted).
 <p>
 <img src="settings.png" alt=""/>
 </p>
-
-
 <p>
 After all of that, you can commit your changes to GitHub and wait for your website on:
-<strong>https://myAccount.github.io/myProject</strong>
+<strong>https://myAccount.github.io/</strong>
 </p>
-<figure><pre><code class="bash">$ git add .
+<figure><pre><code class="bash">$ git checkout -b source
+$ git add .
 $ git commit -m &quot;First commit&quot;
-$ git push origin master</code></pre><figcaption></figcaption></figure>
+$ git push -u origin source</code></pre><figcaption></figcaption></figure>
+
+
+<h3>For a project myAccount.github.io/myProject</h3>
 
 
   </div>
