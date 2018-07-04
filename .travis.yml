@@ -1,16 +1,26 @@
-language: c
-addons:
-  apt:
-    packages:
-    - libasound2:i386
-    - lib32z1
-    - lib32bz2-1.0
-    - libssl1.0.0:i386
-    - libfreetype6:i386
+language: smalltalk
+
+os:
+    - linux
+
+smalltalk:
+    - Pharo-6.1
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar && ./scripts/build.sh && cd ..
+
 script:
-- if [[ ${TRAVIS_BRANCH} == "source" ]]; then make generate; fi
-- if [[ ${TRAVIS_BRANCH} == "source" && ${TRAVIS_PULL_REQUEST} == "false" ]]; then
-  make deploy; fi
-env:
-  global:
-    secure: DIn07MJzGegAoY66/ro1067ZR4jZL4HtDLHMA3CkfvTS08b4sndtC81sdMxnolPcFmLXOv+INKrOuhL4tU16glYnFxugK/de289IbLlyOL9fWt0HaTTt7GQ7OfTpMNhD6hOqJPRZqmcOL2Y0XuXMsHHWNDOvRWkO3LivLmOUd9sMancaIEelURSJryiM7V5uv1iiTM+p0hQWG2FpJQ5XyHP9+IPORlRGhkcg2pgE5Ihvwnk6ZIdu9q2B0Hp+xA0g0suA60jkBDoXeewBd0L6eaAwKrn6f9rXrJJEtF6xLWYSu93xHPQGN+39+J3oKsHV2ZfSiQDo9DjxXme/NzWMrbqUvX9MqT4zaufK8rHq0SBTkb01XEsA2NhQMUsyrTpENt6qcmihULtZ1tW+L5Kec1KhbhgoYJQfQVazVWt48lF300fLNYX9LM/WJk7g05A688j5wuv9Zi5GoSxjBpkumzocuxVJFKPJGruy85EgiDQho9AroouAsRovbGKwL/xt0aSfwLMEK8uvVmOpHOFflubyTw5H/tbOMrmi3NDxLZu6ewyp46GpyTQKxH7Hp8u6LTFJP7rLvRmvfgl2+vp5L40u1GtPpr4ziluzKn3u9hNxQrYOWt2Hu03rQHWL1wGwYIEIZiZLqydWEKpS0dFC4eqUDnUuMUKnJvCdd11NwIU=
+    - .pillar/build/pillar build html
+    - cd _result/html && touch .nojekyll && cd ..
+
+deploy:
+   provider: pages
+   target-branch: master
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: source

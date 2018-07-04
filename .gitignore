@@ -19,3 +19,4 @@ github-*.zip
 
 .ecstatic
 _site/
+_result/
