@@ -116,8 +116,7 @@ ${inputFile:path=coordinates.pillar}$
 
 ]]]
 
-This only used to specify all files of your project with a ""heading 1"" level title.
-The ==toc.html== is not necessary.
+This is only used to generate the menu by specifying files of your project having at least one ""heading 1"" level title. The ==toc.html== is not used.
 
 @@note ""Important"" : Each Pillar has to contain only one ''H1'' title. Indeed this title is automatically taken as the title of the menu representing this page. So all other titles of your page have to be subtitles of the first one. You can define ''H2'' or ''H3'' titles.
 
@@ -166,12 +165,12 @@ Now you should get a page like that:
 
 +New Page>file://teach.png+
 
-@@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*
+@@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*.
 
-
-
-
-
+=
+=
+=
+=
 
 !! Publish It on GitHub pages
 
@@ -246,6 +245,11 @@ $ git commit -m "First commit"
 $ git push -u origin source
 ]]]
 
+
+=
+=
+=
+=
 
 !!! For a project myAccount.github.io/myProject
 
