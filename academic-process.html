@@ -149,7 +149,7 @@ $ ./scripts/build.sh
 
 # install pillar in your home and update your bashrc
 $ mv build ~/.pillar
-$ echo 'export PATH=&quot;$PATH:~/.pillar&quot;' &gt;&gt; ~/.bashrc </code></pre><figcaption></figcaption></figure>
+$ echo 'export PATH=&quot;$PATH:~/.pillar&quot;' &gt;&gt; ~/.bashrc </code></pre><figcaption>Clone and Install Pillar</figcaption></figure>
 
 
 <p class="note">For the following sections, we need to have a GitHub account. So check <a href="https://services.github.com/on-demand/intro-to-github/create-github-account">here</a> if you do not have a GitHub account.</p>
@@ -213,13 +213,13 @@ $ git clone https://github.com/myAccount/myAccount &amp;&amp; cd myAccount
 #Or git clone https://github.com/myAccount/myProject &amp;&amp; cd myProject
 $ pillar archetype academic
 $ pillar build html
-$ pillar serve -w &amp;</code></pre><figcaption></figcaption></figure>
+$ pillar serve -w &amp;</code></pre><figcaption>Clone and Install academic archetype</figcaption></figure>
 
 <p>
 Then we will have a skelon site available on <code>localhost:8080</code>.
 If you want to change the port, you can use the <code>-p</code> parameter as in: 
 </p>
-<figure><pre><code>$ pillar serve -p xxxx -w &amp;</code></pre><figcaption></figcaption></figure>
+<figure><pre><code>$ pillar serve -p xxxx -w &amp;</code></pre><figcaption>Change port of your server</figcaption></figure>
 
 <p>
 After these steps, you will get a default website as: 
@@ -227,10 +227,9 @@ After these steps, you will get a default website as:
 </p>
 <h2>Editing your site</h2>
 
-<ul>
-<li>We are going fisrt to customize your profile in <code>pillar.conf</code> file.</li>
-</ul>
-
+<p>
+We are going fisrt to customize your profile in <code>pillar.conf</code> file.
+</p>
 <figure><pre><code>
    &quot;baseurl&quot; : &quot;&quot;,
    &quot;profile&quot; : [
@@ -243,22 +242,20 @@ After these steps, you will get a default website as:
 	],
 
 #'Basic website meta-data. Used by the different templates to fill-out information and page metas': #comment,
-   &quot;site_name&quot;: &quot;Personal's Stuff&quot;,</code></pre><figcaption></figcaption></figure>
+   &quot;site_name&quot;: &quot;Personal's Stuff&quot;,</code></pre><figcaption>Change your profile</figcaption></figure>
 
 <p>
 That is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
 </p>
-
-<ul>
-<li>For the naviguation bar of the site, it is managed by a <code>toc.pillar</code> file located at the root of the repository.</li>
-</ul>
-
+<p>
+For the naviguation bar of the site, it is managed by a <code>toc.pillar</code> file located at the root of the repository.
+</p>
 <figure><pre><code>
 ${inputFile:path=index.pillar}$
 ${inputFile:path=projects.pillar}$
 ${inputFile:path=research.pillar}$
 ${inputFile:path=publications.pillar}$
-${inputFile:path=coordinates.pillar}$</code></pre><figcaption></figcaption></figure>
+${inputFile:path=coordinates.pillar}$</code></pre><figcaption>Menu inclusion</figcaption></figure>
 <p>
 Default content of toc file.
 </p>
@@ -293,14 +290,14 @@ Create <code>teaching.pillar</code> file at the root of your project directory w
 -TD Introduction to Databases
 -Occasional course Initiation to Php and MySQL
 -TD Course Modeling Events in REMORA
--Occasional course Integrity constraints in the relational models</code></pre><figcaption></figcaption></figure>
+-Occasional course Integrity constraints in the relational models</code></pre><figcaption>Pillar file's example</figcaption></figure>
 
 <p>
 After this we have to add a new entry in <code>toc.pillar</code>. This will allow us to have <strong>Teaching</strong> as
 a new menu in the naviguation bar.
 </p>
 <figure><pre><code>
-${inputFile:path=teaching.pillar}$</code></pre><figcaption></figcaption></figure>
+${inputFile:path=teaching.pillar}$</code></pre><figcaption>Add a new menu</figcaption></figure>
 
 <p>
 We can notice that <code>toc.pillar</code> is the file used to declare different menus.
@@ -372,7 +369,7 @@ deploy:
    keep-history: true
    local_dir: _result/html
    on:
-     branch: source</code></pre><figcaption></figcaption></figure>
+     branch: source</code></pre><figcaption>Travis configuration</figcaption></figure>
 
 <p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files on <strong>master</strong> GitHub branch. It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.</p>
 <p>
@@ -395,7 +392,7 @@ After all of that, you can commit your changes to GitHub and wait for your websi
 <figure><pre><code class="bash">$ git checkout -b source
 $ git add .
 $ git commit -m &quot;First commit&quot;
-$ git push -u origin source</code></pre><figcaption></figcaption></figure>
+$ git push -u origin source</code></pre><figcaption>Create source branch and commit on it</figcaption></figure>
 
 
 <h3>For a project myAccount.github.io/myProject</h3>
@@ -430,7 +427,7 @@ deploy:
    keep-history: true
    local_dir: _result/html
    on:
-     branch: master</code></pre><figcaption></figcaption></figure>
+     branch: master</code></pre><figcaption>Travis configuration</figcaption></figure>
 
 <p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>master</strong> branch and push generated files on <strong>gh-pages</strong> GitHub branch. It means we should have a default <strong>master</strong> branch. <strong>gh-pages</strong> branch will be automatically created by Travis job.</p>
 <p>
@@ -440,7 +437,7 @@ As in the previous case, we are going to generate a token on Github and add it a
 In this case, we must change a	bite the configuration. So in <code>pillar.conf</code> file, change the baseurl:
 </p>
 <figure><pre><code>   &quot;baseurl&quot;: &quot;/myProject&quot;,
-   ...</code></pre><figcaption></figcaption></figure>
+   ...</code></pre><figcaption>Change the baseurl</figcaption></figure>
 
 <p class="note">This will make urls start from your project, instead of from your account.</p>
 <p>
@@ -449,7 +446,7 @@ After that, you can commit your changes to GitHub and wait for your website on:
 </p>
 <figure><pre><code class="bash">$ git add .
 $ git commit -m &quot;First commit&quot;
-$ git push -u origin master</code></pre><figcaption>Commit</figcaption></figure>
+$ git push -u origin master</code></pre><figcaption>Commit your project on master branch</figcaption></figure>
 
 
   </div>
