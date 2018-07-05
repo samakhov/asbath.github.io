@@ -222,7 +222,7 @@ $ pillar build html
 $ pillar serve -w &amp;</code></pre><figcaption>Clone and Install academic archetype</figcaption></figure>
 
 <p>
-Then we will have a skelon site available on <code>localhost:8080</code>.
+Then we will have a skeleton site available on <code>localhost:8080</code>.
 If you want to change the port, you can use the <code>-p</code> parameter as in: 
 </p>
 <figure><pre><code>$ pillar serve -p xxxx -w &amp;</code></pre><figcaption>Change port of your server</figcaption></figure>
@@ -231,8 +231,8 @@ If you want to change the port, you can use the <code>-p</code> parameter as in:
 After these steps, you will get a default website as: 
 
 <figure>
-	<img src="default.png" alt="Default website"/>
-	<figcaption>Default website</figcaption>
+	<img src="default.png" alt="Skeleton website"/>
+	<figcaption>Skeleton website</figcaption>
 </figure>
 </p>
 <h2>Editing your site</h2>
@@ -255,7 +255,7 @@ We are going fisrt to customize your profile in <code>pillar.conf</code> file.
    &quot;site_name&quot;: &quot;Personal's Stuff&quot;,</code></pre><figcaption>Change your profile</figcaption></figure>
 
 <p>
-That is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
+This is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
 </p>
 <p>
 For the naviguation bar of the site, it is managed by a <code>toc.pillar</code> file located at the root of the repository.
@@ -266,16 +266,15 @@ ${inputFile:path=projects.pillar}$
 ${inputFile:path=research.pillar}$
 ${inputFile:path=publications.pillar}$
 ${inputFile:path=coordinates.pillar}$</code></pre><figcaption>Menu inclusion</figcaption></figure>
-<p>
-Default content of toc file.
-</p>
+
 <p>
 This only used to specify all files of your project with a <strong>heading 1</strong> level title.
 The <code>toc.html</code> is not necessary.
 </p>
+<p class="note"><strong>Important</strong> : Each Pillar has to contain only one <em>H1</em> title. Indeed this title is automatically taken as the title of the menu representing this page. So all other titles of your page have to be subtitles of the first one. You can define <em>H2</em> or <em>H3</em> titles.</p>
 
 <p>
-Let's create a new page and it as menu to the navbar.
+Let's create a new page and add it as menu to the navbar.
 </p>
 <p>
 We can choose to manage <strong>Teaching</strong> activities of a research professor.
