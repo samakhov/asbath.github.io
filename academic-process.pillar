@@ -8,7 +8,7 @@ This tutorial shows how to put into place a personal website using pillar, and a
 This tutorial requires the development version of pillar that can be found in the ==feature/server-command== branch.
 To install this version, you will need to clone pillar, check out that branch and then proceed with a normal pillar installation, as follows:
 
-[[[language=bash
+[[[language=bash|caption=Clone and Install Pillar
 # Clone and build pillar
 $ git clone git@github.com:samakhov/pillar.git -b feature/server-command
 $ cd pillar
@@ -63,7 +63,7 @@ After the installation, we can proceed to create a new site in a fresh directory
 We will install the ==academic== archetype and then run a local server.
 This should work out of the box in your local machine, however, you will need to change the ==baseurl== setting in the ==pillar.conf== file to correctly render in github pages.
 
-[[[
+[[[caption=Clone and Install academic archetype
 # On a new terminal, so the new bashrc settings are taken
 $ git clone https://github.com/myAccount/myAccount && cd myAccount
 #Or git clone https://github.com/myAccount/myProject && cd myProject
@@ -75,7 +75,7 @@ $ pillar serve -w &
 Then we will have a skelon site available on ==localhost:8080==.
 If you want to change the port, you can use the ==-p== parameter as in: 
 
-[[[
+[[[caption=Change port of your server
 $ pillar serve -p xxxx -w &
 ]]]
 
@@ -84,9 +84,9 @@ After these steps, you will get a default website as:
 
 !! Editing your site
 
--We are going fisrt to customize your profile in ==pillar.conf== file.
+We are going fisrt to customize your profile in ==pillar.conf== file.
 
-[[[
+[[[caption=Change your profile
 
    "baseurl" : "",
    "profile" : [
@@ -105,10 +105,9 @@ After these steps, you will get a default website as:
 
 That is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
 
+For the naviguation bar of the site, it is managed by a ==toc.pillar== file located at the root of the repository.
 
--For the naviguation bar of the site, it is managed by a ==toc.pillar== file located at the root of the repository.
-
-[[[
+[[[caption=Menu inclusion
 
 ${inputFile:path=index.pillar}$
 ${inputFile:path=projects.pillar}$
@@ -129,7 +128,7 @@ We can choose to manage ""Teaching"" activities of a research professor.
 
 Create ==teaching.pillar== file at the root of your project directory with contents:
 
-[[[
+[[[caption=Pillar file's example
 
 !Teaching
 
@@ -155,7 +154,7 @@ Create ==teaching.pillar== file at the root of your project directory with conte
 After this we have to add a new entry in ==toc.pillar==. This will allow us to have ""Teaching"" as
 a new menu in the naviguation bar.
 
-[[[
+[[[caption=Add a new menu
 
 ${inputFile:path=teaching.pillar}$
 
@@ -197,7 +196,7 @@ Now we install travis scripts in our directory.
 
 # Create a ==.travis.yml== file in the root of your site with the following content
 
-[[[
+[[[caption=Travis configuration
 language: smalltalk
 
 os:
@@ -240,7 +239,7 @@ where you can add variables (those variables will be automatically encrypted).
 After all of that, you can commit your changes to GitHub and wait for your website on:
 ""https://myAccount.github.io/""
 
-[[[language=bash
+[[[language=bash|caption=Create source branch and commit on it
 $ git checkout -b source
 $ git add .
 $ git commit -m "First commit"
@@ -254,7 +253,7 @@ Now we install travis scripts in our directory.
 
 # Create a ==.travis.yml== file in the root of your site with the following content
 
-[[[
+[[[caption=Travis configuration
 language: smalltalk
 
 os:
@@ -288,7 +287,7 @@ As in the previous case, we are going to generate a token on Github and add it a
 
 In this case, we must change a	bite the configuration. So in ==pillar.conf== file, change the baseurl:
 
-[[[
+[[[caption=Change the baseurl
    "baseurl": "/myProject",
    ...
 ]]]
@@ -298,7 +297,7 @@ In this case, we must change a	bite the configuration. So in ==pillar.conf== fil
 After that, you can commit your changes to GitHub and wait for your website on:
 ""https://myAccount.github.io/myProject""
 
-[[[language=bash|caption=Commit
+[[[language=bash|caption=Commit your project on master branch
 $ git add .
 $ git commit -m "First commit"
 $ git push -u origin master
