@@ -164,7 +164,7 @@ We can notice that ==toc.pillar== is the file used to declare different menus.
 
 Now you should get a page like that:
 
-+file://teach.png+
++New Page>file://teach.png+
 
 @@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*
 
@@ -184,7 +184,7 @@ This way, on every commit we can build our site and push our html to our website
 Automatic building and hosting of our website is using Travis Continuous Integration. So let's launch to Travis via our GitHub account following *this>https://trailhead.salesforce.com/en/modules/sfdx_travis_ci/units/sfdx_travis_ci_setup#Tdxn4tBKheading7*.
 
 We can now activate our GitHub repository in Travis:
-+file://activate.png+
++Travis activation>file://activate.png+
 
 This will automatically add travis as a service in your GitHub repository.
 
@@ -229,12 +229,12 @@ deploy:
 
 We are now going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
-+file://travis_settings.png+
++Travis settings>file://travis_settings.png+
 
 On your project Settings in Travis, you have a menu labelled ""Environment variables""
 where you can add variables (those variables will be automatically encrypted).
 
-+file://settings.png+
++Add Token>file://settings.png+
 
 After all of that, you can commit your changes to GitHub and wait for your website on:
 ""https://myAccount.github.io/""
