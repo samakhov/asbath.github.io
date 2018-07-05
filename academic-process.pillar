@@ -182,18 +182,16 @@ We can already generate our pillar website automatically by calling pillar, and 
 Travis is a continuous integration service that will execute several scripts every time a new commit/branch/pull request is pushed into our repository.
 This way, on every commit we can build our site and push our html to our website.
 
-!!!Let's explain two different cases and how to proceed 
-
-As for creating our GitHub repository, we are going to consider the two different cases.
-
-!!! For a personal website as myAccount.github.io
-
 Automatic building and hosting of our website is using Travis Continuous Integration. So let's launch to Travis via our GitHub account following *this>https://trailhead.salesforce.com/en/modules/sfdx_travis_ci/units/sfdx_travis_ci_setup#Tdxn4tBKheading7*.
 
 We can now activate our GitHub repository in Travis:
 +file://activate.png+
 
 This will automatically add travis as a service in your GitHub repository.
+
+As for creating our GitHub repository, we are going to consider the two different cases
+
+!!! For a personal website as myAccount.github.io
 
 Now we install travis scripts in our directory.
 
@@ -251,3 +249,57 @@ $ git push -u origin source
 
 
 !!! For a project myAccount.github.io/myProject
+
+Now we install travis scripts in our directory.
+
+# Create a ==.travis.yml== file in the root of your site with the following content
+
+[[[
+language: smalltalk
+
+os:
+    - linux
+
+smalltalk:
+    - Pharo-6.1
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar && ./scripts/build.sh && cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html && touch .nojekyll && cd ..
+
+deploy:
+   provider: pages
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: master
+]]]
+
+@@note This script globally download Pillar, build the site from pillar files pushed on ""master"" branch and push generated files on ""gh-pages"" GitHub branch. It means we should have a default ""master"" branch. ""gh-pages"" branch will be automatically created by Travis job.
+
+As in the previous case, we are going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
+
+In this case, we must change a	bite the configuration. So in ==pillar.conf== file, change the baseurl:
+
+[[[
+   "baseurl": "/myProject",
+   ...
+]]]
+
+@@note This will make urls start from your project, instead of from your account.
+
+After that, you can commit your changes to GitHub and wait for your website on:
+""https://myAccount.github.io/myProject""
+
+[[[language=bash
+$ git add .
+$ git commit -m "First commit"
+$ git push -u origin master
+]]]
