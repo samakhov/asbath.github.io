@@ -71,7 +71,7 @@ $ pillar build html
 $ pillar serve -w &
 ]]]
 
-Then we will have a skelon site available on ==localhost:8080==.
+Then we will have a skeleton site available on ==localhost:8080==.
 If you want to change the port, you can use the ==-p== parameter as in: 
 
 [[[caption=Change port of your server
@@ -79,7 +79,7 @@ $ pillar serve -p xxxx -w &
 ]]]
 
 After these steps, you will get a default website as: 
-+Default website>file://default.png+
++Skeleton website>file://default.png+
 
 !! Editing your site
 
@@ -102,7 +102,7 @@ We are going fisrt to customize your profile in ==pillar.conf== file.
 
 ]]]
 
-That is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
+This is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
 
 For the naviguation bar of the site, it is managed by a ==toc.pillar== file located at the root of the repository.
 
@@ -115,13 +115,14 @@ ${inputFile:path=publications.pillar}$
 ${inputFile:path=coordinates.pillar}$
 
 ]]]
-Default content of toc file.
 
 This only used to specify all files of your project with a ""heading 1"" level title.
 The ==toc.html== is not necessary.
 
+@@note ""Important"" : Each Pillar has to contain only one ''H1'' title. Indeed this title is automatically taken as the title of the menu representing this page. So all other titles of your page have to be subtitles of the first one. You can define ''H2'' or ''H3'' titles.
 
-Let's create a new page and it as menu to the navbar.
+
+Let's create a new page and add it as menu to the navbar.
 
 We can choose to manage ""Teaching"" activities of a research professor.
 
