@@ -371,7 +371,7 @@ deploy:
    on:
      branch: source</code></pre><figcaption>Travis configuration</figcaption></figure>
 
-<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files on <strong>master</strong> GitHub branch. It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.</p>
+<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files (located in <em>_result/html</em>) on <strong>master</strong> GitHub branch. It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.</p>
 <p>
 We are now going to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis
 </p>
@@ -429,7 +429,7 @@ deploy:
    on:
      branch: master</code></pre><figcaption>Travis configuration</figcaption></figure>
 
-<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>master</strong> branch and push generated files on <strong>gh-pages</strong> GitHub branch. It means we should have a default <strong>master</strong> branch. <strong>gh-pages</strong> branch will be automatically created by Travis job.</p>
+<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>master</strong> branch and push generated files (located in <em>_result/html</em>) on <strong>gh-pages</strong> GitHub branch. It means we should have a default <strong>master</strong> branch. <strong>gh-pages</strong> branch will be automatically created by Travis job.</p>
 <p>
 As in the previous case, we are going to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis
 </p>
@@ -448,6 +448,11 @@ After that, you can commit your changes to GitHub and wait for your website on:
 $ git commit -m &quot;First commit&quot;
 $ git push -u origin master</code></pre><figcaption>Commit your project on master branch</figcaption></figure>
 
+
+<p>
+You can now enjoy the continuous integration. Every time you modify a Pillar, commit it on github and you will see your website automatically updated.
+
+</p>
 
   </div>
 </div>

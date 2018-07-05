@@ -225,7 +225,7 @@ deploy:
      branch: source
 ]]]
 
-@@note This script globally download Pillar, build the site from pillar files pushed on ""source"" branch and push generated files on ""master"" GitHub branch. It means we should create ""master"" and ""source"" branch and only push to ""source"" branch.
+@@note This script globally download Pillar, build the site from pillar files pushed on ""source"" branch and push generated files (located in ''_result/html'') on ""master"" GitHub branch. It means we should create ""master"" and ""source"" branch and only push to ""source"" branch.
 
 We are now going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
@@ -281,7 +281,7 @@ deploy:
      branch: master
 ]]]
 
-@@note This script globally download Pillar, build the site from pillar files pushed on ""master"" branch and push generated files on ""gh-pages"" GitHub branch. It means we should have a default ""master"" branch. ""gh-pages"" branch will be automatically created by Travis job.
+@@note This script globally download Pillar, build the site from pillar files pushed on ""master"" branch and push generated files (located in ''_result/html'') on ""gh-pages"" GitHub branch. It means we should have a default ""master"" branch. ""gh-pages"" branch will be automatically created by Travis job.
 
 As in the previous case, we are going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
@@ -302,3 +302,6 @@ $ git add .
 $ git commit -m "First commit"
 $ git push -u origin master
 ]]]
+
+
+You can now enjoy the continuous integration. Every time you modify a Pillar, commit it on github and you will see your website automatically updated.
