@@ -318,7 +318,11 @@ We can notice that <code>toc.pillar</code> is the file used to declare different
 Now you should get a page like that:
 </p>
 <p>
-<img src="teach.png" alt=""/>
+
+<figure>
+	<img src="teach.png" alt="New Page"/>
+	<figcaption>New Page</figcaption>
+</figure>
 </p>
 <p class="note">We have not cover all the syntax of Pillar here. So for more, you can click <a href="https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet">here</a></p>
 
@@ -340,7 +344,11 @@ Automatic building and hosting of our website is using Travis Continuous Integra
 </p>
 <p>
 We can now activate our GitHub repository in Travis:
-<img src="activate.png" alt=""/>
+
+<figure>
+	<img src="activate.png" alt="Travis activation"/>
+	<figcaption>Travis activation</figcaption>
+</figure>
 </p>
 <p>
 This will automatically add travis as a service in your GitHub repository.
@@ -388,14 +396,22 @@ deploy:
 We are now going to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis
 </p>
 <p>
-<img src="travis_settings.png" alt=""/>
+
+<figure>
+	<img src="travis_settings.png" alt="Travis settings"/>
+	<figcaption>Travis settings</figcaption>
+</figure>
 </p>
 <p>
 On your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
 where you can add variables (those variables will be automatically encrypted).
 </p>
 <p>
-<img src="settings.png" alt=""/>
+
+<figure>
+	<img src="settings.png" alt="Add Token"/>
+	<figcaption>Add Token</figcaption>
+</figure>
 </p>
 <p>
 After all of that, you can commit your changes to GitHub and wait for your website on:
