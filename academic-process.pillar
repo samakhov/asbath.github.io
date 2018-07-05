@@ -298,7 +298,7 @@ In this case, we must change a	bite the configuration. So in ==pillar.conf== fil
 After that, you can commit your changes to GitHub and wait for your website on:
 ""https://myAccount.github.io/myProject""
 
-[[[language=bash
+[[[language=bash|caption=Commit
 $ git add .
 $ git commit -m "First commit"
 $ git push -u origin master
