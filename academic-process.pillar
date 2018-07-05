@@ -167,10 +167,7 @@ Now you should get a page like that:
 
 @@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*.
 
-=
-=
-=
-=
+
 
 !! Publish It on GitHub pages
 
@@ -246,10 +243,7 @@ $ git push -u origin source
 ]]]
 
 
-=
-=
-=
-=
+
 
 !!! For a project myAccount.github.io/myProject
 
