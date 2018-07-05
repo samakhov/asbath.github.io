@@ -37,7 +37,7 @@ Both in these cases, creating the repository on GitHub is the same.
 For that, we need to follow these steps:
 
 - In the upper-right corner of any page, click ""+"", and then click ""New repository"" as: 
-+file://new.png+
++New repository>file://new.png+
 - Type a name for your repository.
 -# For personal website you need to named it as ""myAccount.github.io""
 -# For the second case, you can named it as you want, ""myProject"" for example.
@@ -49,7 +49,7 @@ For that, we need to follow these steps:
 
 Your GitHub repository is now created.
 
-+file://repo_created.png+
++GitHub repository>file://repo_created.png+
 
 
 
@@ -80,7 +80,7 @@ $ pillar serve -p xxxx -w &
 ]]]
 
 After these steps, you will get a default website as: 
-+file://default.png+
++Default website>file://default.png+
 
 !! Editing your site
 
