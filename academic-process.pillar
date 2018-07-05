@@ -29,8 +29,8 @@ Now we are going to create a repository on GitHub for our website. In this part,
 #You want to set a repository for your personal website as ""myAccount.github.io""
 #Or you want to have a website for a project which will be reached via ""myAccount.github.io/myProject""
 
-In these two cases, GitHub provides you a sevrice named GitHub Pages which allows you to host free your website.
-But especially for the second case, you need to have a personal website, as in the first case, before hosting another project on your GitHub account.
+In these two cases, GitHub provides you a service named GitHub Pages which allows you to host free your website.
+But especially for the second case, you need to have a personal website (by following first case), before hosting another project on your GitHub account.
 
 Both in these cases, creating the repository on GitHub is the same.
 
@@ -41,14 +41,13 @@ For that, we need to follow these steps:
 - Type a name for your repository.
 -# For personal website you need to named it as ""myAccount.github.io""
 -# For the second case, you can named it as you want, ""myProject"" for example.
-- Optionaly, add a description for your repository like "My personal web site" 
+- Optionally, add a description for your repository like "My personal web site" 
 - According to informations which will be on your website, you have to chose between "Private" and "Public". Generaly it is public. For private, you need to pay to GitHub.
 - Select ""Initialize this repository with a README"".
 - Add .gitignore by selecting Smalltalk as default language.
 - Now click ""Create repository"".
 
-Your GitHub repository is now created.
-
+Your GitHub repository is now created and look like that.
 +GitHub repository>file://repo_created.png+
 
 
