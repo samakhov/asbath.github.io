@@ -6,7 +6,7 @@ This tutorial shows how to put into place a personal website using pillar, and a
 !! Setting up the environment
 
 This tutorial requires the development version of pillar that can be found in the ==feature/server-command== branch.
-To install this version, you will need to clone pillar, check out that branch and then proceed with a normal pillar installation, as follows:
+Clone pillar, check out that branch and then proceed with a normal pillar installation, as displayed in figure 1:
 
 [[[language=bash|caption=Clone and Install Pillar
 # Clone and build pillar
@@ -29,7 +29,7 @@ Now we are going to create a repository on GitHub for our website. In this part,
 #You want to set a repository for your personal website as ""myAccount.github.io""
 #Or you want to have a website for a project which will be reached via ""myAccount.github.io/myProject""
 
-In these two cases, GitHub provides you a service named GitHub Pages which allows you to host free your website.
+For both cases, GitHub provides you a service named GitHub Pages which allows you to host free your website.
 But especially for the second case, you need to have a personal website (by following first case), before hosting another project on your GitHub account.
 
 Both in these cases, creating the repository on GitHub is the same.
