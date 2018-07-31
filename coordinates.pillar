@@ -1,5 +1,5 @@
 {
-	"htmlTemplate": "_support/templates/blog.mustache",
+	"htmlTemplate": "_support/templates/blog.mustache"
 }
 
 !Coordinates
