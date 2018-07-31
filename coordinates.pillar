@@ -1,6 +1,7 @@
 {
-	"htmlTemplate": "_support/templates/blog.mustache"
+	"htmlTemplate": "_support/templates/blog.mustache",
 }
+
 !Coordinates
 
 Contact me. I'm open for collaborations.
