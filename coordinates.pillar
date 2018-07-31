@@ -1,4 +1,5 @@
 {
+	"htmlWriter": #html,
 	"htmlTemplate": "_support/templates/blog.mustache"
 }
 
