@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="theme" content="hugo-academic">
     <meta name="theme-color" content="primary">
-	<title>{{title}}</title>
+	<title>How to manage mutliple template</title>
 
     <!-- Highlight js -->
     <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
@@ -31,7 +31,7 @@
 
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+      ga('create', '', 'auto');
       ga('require', 'eventTracker');
       ga('require', 'outboundLinkTracker');
       ga('require', 'urlChangeTracker');
@@ -55,7 +55,7 @@
 
 
 	<div class="article-header">
-	<span class="article-header-caption">{{site_name}}</span>
+	<span class="article-header-caption">Asbathou BIYALOU-SAMA</span>
 </div>
 
 	<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        {{site_name}}
+        Asbathou BIYALOU-SAMA
       </a>
     </div>
 
@@ -79,13 +79,31 @@
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav navbar-right">
-		{{# toc.children}}
+		
         <li class="nav-item">
-          <a href="{{baseurl}}{{href}}">
-            <span>{{name}}</span>
+          <a href="/index.html#about me">
+            <span>About me</span>
           </a>
         </li>
-		{{/ toc.children}}
+		
+        <li class="nav-item">
+          <a href="/projects.html#projects">
+            <span>Projects</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/coordinates.html#coordinates">
+            <span>Coordinates</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/blog.html#blog">
+            <span>Blog</span>
+          </a>
+        </li>
+		
       
       </ul>
       
@@ -99,38 +117,39 @@
 <section>
 <div class="container">
 <div class="row">
-  <div class="col-xs-12 col-md-12">
+  <div class="col-xs-12 col-md-4 section-heading">
+	<h1></h1>
+
+    
+	<div id="profile">
+		<div class="portrait" style="background-image: url('asbath.jpg');"></div>
 	
-	{{{content}}}
+		<h1>Asbathou Biyalou-Sama</h1>
+		<h3>Intern</h3>
+		<p class="center-text">Inria Lille - Nord Europe</p>
+	</div>
+	
+  </div>
+  <div class="col-xs-12 col-md-8">
+
+	<h2>How to manage multiple template</h2>
+
+<p>
+Check If we have the good number of insertion. We are going to take advantages from.
+</p>
+<p>
+We are going to the town, ask everybody you knows.
+</p>
+<p>
+Jacques and Djill is the most interesting couple of the cinema I have ever known.
+
+</p>
+
   </div>
 </div>
 </div>
 </section>
 	
-
-    <div class="row justify-content-md-center">
-    <div class="col col-md-8" id="disqus_thread"></div>
-    </div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-/*var disqus_config = function () {
-this.page.url = 'www.samakhov.github.io/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = 'unique.samamkhov.github.io'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};*/
-
- (function() { // DON'T EDIT BELOW THIS LINE
- var d = document, s = d.createElement('script');
-    s.src = 'https://www-samakhov-github-io.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);})();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
