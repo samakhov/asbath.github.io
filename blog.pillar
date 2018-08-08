@@ -1,6 +1,6 @@
 {
 	"htmlWriter": #html,
-	"template": "_support/templates/blog.mustache"
+	"template": "blog.mustache"
 }
 
 !Blog
