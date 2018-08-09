@@ -1,0 +1,141 @@
+{
+
+	"title": "Write A Book In Html using Pillar"
+
+}
+
+!! Write A Book In Html using Pillar
+
+In this tutorial we are going to write a document (more precisely a book with chapters) with pillar syntax and generate in Html.
+
+!!! Tools
+
+During this tutorial we are going to manage with these tools.
+
+-""Pillar""(*https://github.com/pillar-markup/pillar*) : the main tool, It generates documents in different formats as Html from pillar syntax.
+
+-""Github""(*www.github.com*) :  for hosting our book on the web. It means you need to have a Github account, if not follow this *https://services.github.com/on-demand/intro-to-github/create-github-account*.
+
+-""Travis""(*www.travis-ci.org*) :  for automating deployment services.
+
+
+!!! Context of the book
+
+Our book is about learning pillar syntax.
+
+So our chapters are:
+
+-Safe Pillar installation on Ubuntu/MacOS
+-Text Changing with pillar styling elements
+-Structure elements
+
+
+
+!!! Installation
+
+Pillar project is available on Github. So we are going to clone it from and build from sources.
+
+[[[language=bash
+#for SSH cloning
+$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
+#for HTTPS cloning
+$ git clone https://github.com/pillar-markup/pillar.git -b dev-7
+]]]
+
+The branch ==dev-7== is the branch with latest available changes. The above command creates a
+directory named ==pillar== in your file system.
+
+Now we should build pillar in command line. We get in the repository
+and execute the script.
+
+[[[language=bash
+$ cd pillar
+$ ./scripts/build.sh
+# This will create a buil directory under pillar directory. This directory contains the executable.
+]]]
+
+Let's move installation directory to ==.pillar== and add path our environment variables.
+
+[[[
+$ cd ..
+$ mv pillar ~/.pillar
+# update path in your .bashrc or .zshrc
+$ export PILLAR_HOME="$HOME/.pillar/build"
+$ export PATH="$PATH:$PILLAR_HOME"
+]]]
+
+We currently have all tools for generating Html files from pillar.
+
+
+!!! Writing the book
+
+We are going to follow these steps:
+- Create a repository on Github
+- Clone that empty repository
+- Choose an archetype and install it on that repo
+- Write some chapters of the book
+- Update ==pillar.conf==
+- Conffigure Travis
+- Publish book on Github
+
+
+!!!! Create a Github repository
+
+We choose to name our repository as ""OurBook"".
+
+Let's proceed following these steps:
+
+- In the upper-right corner of any page, click ""+"", and then click ""New repository"" as: 
++New repository>file://figures/new.png+
+- Type a name for our repository ""OurBook"".
+- Optionally, add a description for your repository like "Our First Pillar Book" 
+- According to informations which will be on your website, you have to chose between "Private" and "Public". Generaly it is public. For private, you need to pay to GitHub.
+
++Filling all required information>file://figures/creating.png+
+
+- Select ""Initialize this repository with a README"".
+- Add .gitignore by selecting Smalltalk as default language.
+- Click ""Create repository"" to finish.
+
+Your GitHub repository is now created and is empty (Just only a README.md file and .gitignore).
++GitHub repository>file://figures/created.png+
+
+
+!!!! Clone the repository
+
+Now that the repository is created, clone it to your local machine.
+
+Choose a directory anywhere in your machine and clone your repository.
+
+@@note :  this part means you have git command line tool installed. If not, follow *this>https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/*.
+
+[[[
+#SSH
+$ git clone git@github.com:your_name/ourbook.git
+#HTTPS
+$ git clone https://github.com/your_nam/ourbook.git
+]]]
+
+
+!!!! Install archetype in your repo
+
+As we are writing a book, we are going to install an archetype named ""book"".
+
+[[[
+$ cd OurBook
+$ pillar archetype book
+]]]
+
+@@note The last command could generate errors. Some of them.
+-pillar: command not recognized. Check the path in your .bashrc or .zshrc.
+-archetype: is not a valid command. Maybe, you have another program with the same name pillar on your machine. Try to remove it or change the path order like this ""export PILLAR_HOME="~/.pillar/build:$PATH"""
+-book does not exist. Check if a repository ==book== is present under ==.pillar/archetypes==, if not re-run ==./scripts/build.sh==
+
+""Some explanations""
+This command checks for an archetype (here ==book==) in pillar installation directory and copy files from that repository to your project one's.
+Exactly an archetype is a directory with a special hierarchy inside.
+
+
+
+!!!! Write some chapters
+
