@@ -203,6 +203,9 @@ You want to deploy on Github and host it using Github Pages, follow the next sec
 <p>
 Just add a <code>.travis.yml</code> at the root of your repository and add a <code>GH_TOKEN</code> to your project in Travis.
 </p>
+<p>
+You don't know how to set properly a travis account, have a look <a href="https://www.raywenderlich.com/1618-travis-ci-tutorial-getting-started">here</a>
+</p>
 <figure><pre><code>language: smalltalk
 
 os:
@@ -228,6 +231,30 @@ deploy:
    local_dir: _result/html
    on:
      branch: master</code></pre><figcaption></figcaption></figure>
+
+
+<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files (located in <em>_result/html</em>) on <strong>master</strong> GitHub branch. It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.</p>
+<p>
+We are now going to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis
+</p>
+<p>
+
+<figure>
+	<img src="travis_settings.png" alt="Travis settings"/>
+	<figcaption>Travis settings</figcaption>
+</figure>
+</p>
+<p>
+On your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
+where you can add variables (those variables will be automatically encrypted).
+</p>
+<p>
+
+<figure>
+	<img src="settings.png" alt="Add Token"/>
+	<figcaption>Add Token</figcaption>
+</figure>
+</p>
 
 
 
