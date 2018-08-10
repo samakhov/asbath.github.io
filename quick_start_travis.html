@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">  	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="theme" content="hugo-academic">
+    <meta name="theme-color" content="primary">
+	<title>Travis Quick start</title>
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="_support/html/css/highlight-commands.css">
+    <script src="_support/html/highlightjs/highlight.pack.js"></script>
+    <script src="_support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="_support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="_support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="_support/html/css/square-braket-associates.css" rel="stylesheet">
+
+
+  	<link href="_support/html/css/font-awesome.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" media="screen">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.4/css/academicons.min.css">
+    <link rel="stylesheet" href="_support/html/css/styles.css">
+    <link rel="icon" type="image/png" href="_support/html/img/icon.png">
+  	<link rel="apple-touch-icon" type="image/png" href="_support/html/img/icon-192.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto+Mono">
+
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', '', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+	
+
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+	<div class="article-header">
+	<span class="article-header-caption">Asbathou BIYALOU-SAMA</span>
+</div>
+
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        Asbathou BIYALOU-SAMA
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+		
+        <li class="nav-item">
+          <a href="/index.html#about me">
+            <span>About me</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/projects.html#projects">
+            <span>Projects</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/coordinates.html#coordinates">
+            <span>Coordinates</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/blog.html#blog">
+            <span>Blog</span>
+          </a>
+        </li>
+		
+      
+      </ul>
+      
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+
+<!-- Projects widget -->
+<section>
+<div class="container">
+<div class="row">
+  <div class="col-xs-12 col-md-4 section-heading">
+	<h1></h1>
+
+    
+	<div id="profile">
+		<div class="portrait" style="background-image: url('asbath.jpg');"></div>
+	
+		<h1>Asbathou Biyalou-Sama</h1>
+		<h3>Intern</h3>
+		<p class="center-text">Inria Lille - Nord Europe</p>
+	</div>
+	
+  </div>
+  <div class="col-xs-12 col-md-8">
+	<h2>Travis Quick Start</h2>
+
+<p>
+If you are here, this is because you are bored of piece of tutorials trying to show you the way to make your project built by Travis when committing on Github. Or I just send you here from a <a href="https://github.com/pillar-markup/pillar/">Pillar</a>
+tutorial.
+</p>
+<p>
+Let's precise the context:
+</p>
+<ul>
+<li>You have a project on Github</li>
+<li>You want your project to be build by Travis when you commit</li>
+<li>You don't have a free Travis account</li>
+</ul>
+
+<p>
+We are going to set a Travis account via a Github account, synchronize your Github projects with Travis. Finally we are going to activate Travis continuous integration on a Github project
+and link Travis and Github via a token.
+</p>
+
+<h3>Create a Travis account linked to your Github account</h3>
+
+<p>
+Go to the travis official website <a href="www.travis-ci.org"></a>.
+</p>
+<p>
+You get something like the below scrennshot, it means you already have an account.
+</p>
+<p>
+
+<figure>
+	<img src="already.pillar" alt="Travis account"/>
+	<figcaption>Travis account</figcaption>
+</figure>
+</p>
+
+<p>
+You should get something like this
+</p>
+<p>
+
+<figure>
+	<img src="travis_website.pillar" alt="Travis website"/>
+	<figcaption>Travis website</figcaption>
+</figure>.
+</p>
+<p>
+In the top right corner of the page you have a <code>Sign in with GitHub</code> button.
+</p>
+<p>
+Just click on it and you should get a page asking you authorize the connection between Github and Travis.
+</p>
+<p>
+
+<figure>
+	<img src="authorize.png" alt="Travis ci authorization"/>
+	<figcaption>Travis ci authorization</figcaption>
+</figure>
+</p>
+<p>
+You can read before click <code>Authorize travis-ci</code>. After that you are going to confirm by providing your Github username and password.
+</p>
+
+<p>
+Few seconds after providing your Github credentials, you should get a page with your Github username with your names and a list of your Github projects.
+</p>
+<p>
+
+<figure>
+	<img src="first_travis.png" alt="Travis profile"/>
+	<figcaption>Travis profile</figcaption>
+</figure>
+</p>
+<p>
+You can notice a <code>Sync</code> button on the left top. Use it everytime you add or remove a project on Github and you want it to be updated on Travis.
+</p>
+
+
+<h3>Activate Travis on your Github project</h3>
+
+<p>
+In the list of projects, just click on the switch button of the project you want.
+</p>
+<p>
+
+<figure>
+	<img src="activated.png" alt="Activating Project"/>
+	<figcaption>Activating Project</figcaption>
+</figure>
+</p>
+<p>
+You have just activated Travis on that Github project. Then now when you commit on that project, Travis will try to build your project with the new commit.
+</p>
+
+
+<h3>Token Generation</h3>
+
+<p>
+Often, Travis need to access to some project's files and do some actions with them. To achieve that, a link is created using a token. This token is generated by Github and added as an encrypted environment variable in Travis settings.
+</p>
+<p>
+So go to your account settings (not a specific project settings) by clicking on a right top button <code>Settings</code>.
+
+<figure>
+	<img src="settings.png" alt="Account Settings Button"/>
+	<figcaption>Account Settings Button</figcaption>
+</figure>
+</p>
+<p>
+After that, click specifically on <code>Developer Settings</code> in the left menu, for access to more advanced settings.
+</p>
+<p>
+Just click on <code>Personal Access Tokens</code> and you will get a page explaining what a token is and a button to generate a new token.
+
+<figure>
+	<img src="tokens" alt="Personal Access Tokens"/>
+	<figcaption>Personal Access Tokens</figcaption>
+</figure>
+</p>
+<p>
+Click on <code>Generate new token</code> button and choose the right you token needs. These rights depends on which work you have to do with that token.
+But generally, <code>repo</code> rights are good enough.
+</p>
+<p>
+
+<figure>
+	<img src="selectWrights.png" alt="Token Rights"/>
+	<figcaption>Token Rights</figcaption>
+</figure>
+
+</p>
+
+  </div>
+</div>
+</div>
+</section>
+	
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="_support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="_support/html/js/annotated-paragraphs.js"></script>
+
+	<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://github.com/pillar-markup/pillar" target="_blank" rel="noopener">Pillar</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+
+  </body>
+</html>
