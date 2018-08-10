@@ -116,6 +116,7 @@ $ git clone git@github.com:your_name/ourbook.git
 $ git clone https://github.com/your_nam/ourbook.git
 ]]]
 
++Cloning project>file://figures/cloning.png+
 
 !!!! Install archetype in your repo
 
@@ -134,8 +135,63 @@ $ pillar archetype book
 ""Some explanations""
 This command checks for an archetype (here ==book==) in pillar installation directory and copy files from that repository to your project one's.
 Exactly an archetype is a directory with a special hierarchy inside.
+We have two subdirectories: 
+-""sample"" a directory containing an example of sources using that archetype. The important things we have in that directory are a ==pillar.conf== file and an ==index.pillar== (maybe other .pillar files)
+-""support"" contains mustache, latex or css and other related files that forms the archetype. Here we have a subdirectory ""templates"" which contains directories according to each type of output we can generate with this archetype. We can have an ""html"", ""latex"" or ""epub"" directory.
 
+So the pillar archetype installation command copies the content of ""support"" directory and put it in a ""_support"" directory under our project directory. ""sample"" directory contents are pasted directly at the root of our project. Then we have a project directory with 
+some example files and ""_support"" directory for the archetype.
 
++Archetype installation>file://figures/archetype_install.png+
 
 !!!! Write some chapters
+
+We have all the architecture to start writing our book. Here we could notice a pre-installed ""Chapters"" directory. The book archetype is especially made for writing books, so it supposes we are going to have chapters in our book.
+
+Let's start with a chapter showing pillar installation. 
+
+Just create a file named ==PillarInstallation.pillar== under ""Chapters"" directory and put this content in.
+
+[[[
+	[[[language=bash
+	#for SSH cloning
+	$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
+	#for HTTPS cloning
+	$ git clone https://github.com/pillar-markup/pillar.git -b dev-7
+	]]]
+
+	The branch ==dev-7== is the branch with latest available changes. The above command creates a
+	directory named ==pillar== in your file system.
+
+	Now we should build pillar in command line. We get in the repository
+	and execute the script.
+
+	[[[language=bash
+	$ cd pillar
+	$ ./scripts/build.sh
+	# This will create a buil directory under pillar directory. This directory contains the executable.
+	]]]
+
+	Let's move installation directory to ==.pillar== and add path our environment variables.
+
+	[[[
+	$ cd ..
+	$ mv pillar ~/.pillar
+	# update path in your .bashrc or .zshrc
+	$ export PILLAR_HOME="$HOME/.pillar/build"
+	$ export PATH="$PATH:$PILLAR_HOME"
+	]]]
+
+	We currently have all tools for generating Html files from pillar.
+
+]]]
+
+@@note We are going to explain a bite pillar syntax. 
+
+These elements ""[[[...]]]"" are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar).
+According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable, we check if our expressions ar correct. 
+Have a look *here*.
+
+
+
 

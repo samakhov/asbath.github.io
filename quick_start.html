@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">  	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="theme" content="hugo-academic">
+    <meta name="theme-color" content="primary">
+	<title>Quick start with Pillar</title>
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="_support/html/css/highlight-commands.css">
+    <script src="_support/html/highlightjs/highlight.pack.js"></script>
+    <script src="_support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="_support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="_support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="_support/html/css/square-braket-associates.css" rel="stylesheet">
+
+
+  	<link href="_support/html/css/font-awesome.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" media="screen">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.4/css/academicons.min.css">
+    <link rel="stylesheet" href="_support/html/css/styles.css">
+    <link rel="icon" type="image/png" href="_support/html/img/icon.png">
+  	<link rel="apple-touch-icon" type="image/png" href="_support/html/img/icon-192.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto+Mono">
+
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', '', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+	
+
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+	<div class="article-header">
+	<span class="article-header-caption">Asbathou BIYALOU-SAMA</span>
+</div>
+
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        Asbathou BIYALOU-SAMA
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+		
+        <li class="nav-item">
+          <a href="/index.html#about me">
+            <span>About me</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/projects.html#projects">
+            <span>Projects</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/coordinates.html#coordinates">
+            <span>Coordinates</span>
+          </a>
+        </li>
+		
+        <li class="nav-item">
+          <a href="/blog.html#blog">
+            <span>Blog</span>
+          </a>
+        </li>
+		
+      
+      </ul>
+      
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+
+<!-- Projects widget -->
+<section>
+<div class="container">
+<div class="row">
+  <div class="col-xs-12 col-md-4 section-heading">
+	<h1></h1>
+
+    
+	<div id="profile">
+		<div class="portrait" style="background-image: url('asbath.jpg');"></div>
+	
+		<h1>Asbathou Biyalou-Sama</h1>
+		<h3>Intern</h3>
+		<p class="center-text">Inria Lille - Nord Europe</p>
+	</div>
+	
+  </div>
+  <div class="col-xs-12 col-md-8">
+	<h2>Quick Start</h2>
+
+<p>
+You just want to generate your book in HTML, you know Pillar already, this tutorial is for you.
+</p>
+<p>
+Common features:
+</p><ul>
+<li>Table of contents: you want to use it !!? After instaling book archetype, you will have to create a <code>index.pillar</code> file including all other files and decomment a line in <code>pillar.conf</code></li>
+</ul>
+<figure><pre><code>  #'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment,
+  &quot;latexWriter&quot; : #'latex:sbabook',
+  &quot;htmlWriter&quot;: #html</code></pre><figcaption></figcaption></figure>
+
+<p>
+With the new features, you don't need to specify a default template file. They are default values.
+</p>
+<ul>
+<li>Template per file.</li>
+</ul>
+
+
+<h3>Quick Install</h3>
+<p>
+All the new features (new archetypes, architecture, book testing) are on branch <strong>dev-7</strong>
+</p>
+<figure><pre><code>#for SSH cloning
+$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
+#for HTTPS cloning
+$ git clone https://github.com/pillar-markup/pillar.git -b dev-7
+$ cd pillar
+$ ./scripts/build.sh
+$ cd ..
+$ mv pillar ~/.pillar
+# update path in your .bashrc or .zshrc
+$ export PILLAR_HOME=&quot;$HOME/.pillar/build&quot;
+$ export PATH=&quot;$PATH:$PILLAR_HOME&quot;</code></pre><figcaption></figcaption></figure>
+
+<p>
+These commands will install pillar on your machine and provide you a <code>pillar</code> executable.
+</p>
+<h3>Start your project</h3>
+
+<p>
+Just install a chosen archetype and compile in your desired format
+</p>
+<figure><pre><code>$ pillar archetype book
+$ pillar build html</code></pre><figcaption></figcaption></figure>
+
+<p>
+You know Pharo, you want to see the generated book quickly. Start a server in <code>yourProject/_result/html/</code>.
+</p>
+<p>
+You can use this in Pharo7 and Pharo6.1
+</p>
+<figure><pre><code>(ZnServer defaultOn: 1701) start.
+
+ZnServer default delegate: ((ZnStaticFileServerDelegate new) 
+directory: '/home/abiyalou/Documents/STAGE/Perso/samakhov.github.io/_result/html' asFileReference;
+yourself).</code></pre><figcaption></figcaption></figure>
+
+<p>
+Enjoy your website locally on <code>localhost:1701</code>.
+</p>
+<p>
+You want to deploy on Github and host it using Github Pages, follow the next section.
+</p>
+<h3>Deploy on Github</h3>
+
+<p>
+Just add a <code>.travis.yml</code> at the root of your repository and add a <code>GH_TOKEN</code> to your project in Travis.
+</p>
+<figure><pre><code>language: smalltalk
+
+os:
+    - linux
+
+smalltalk:
+    - Pharo-6.1
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar &amp;&amp; ./scripts/build.sh &amp;&amp; cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html &amp;&amp; touch .nojekyll &amp;&amp; cd ..
+
+deploy:
+   provider: pages
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: master</code></pre><figcaption></figcaption></figure>
+
+
+
+
+  </div>
+</div>
+</div>
+</section>
+	
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="_support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="_support/html/js/annotated-paragraphs.js"></script>
+
+	<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://github.com/pillar-markup/pillar" target="_blank" rel="noopener">Pillar</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+
+  </body>
+</html>

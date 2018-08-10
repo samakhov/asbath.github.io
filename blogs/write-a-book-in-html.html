@@ -279,7 +279,13 @@ $ git clone git@github.com:your_name/ourbook.git
 #HTTPS
 $ git clone https://github.com/your_nam/ourbook.git</code></pre><figcaption></figcaption></figure>
 
+<p>
 
+<figure>
+	<img src="figures/cloning.png" alt="Cloning project"/>
+	<figcaption>Cloning project</figcaption>
+</figure>
+</p>
 <h4>Install archetype in your repo</h4>
 
 <p>
@@ -298,10 +304,73 @@ $ pillar archetype book</code></pre><figcaption></figcaption></figure>
 <strong>Some explanations</strong>
 This command checks for an archetype (here <code>book</code>) in pillar installation directory and copy files from that repository to your project one's.
 Exactly an archetype is a directory with a special hierarchy inside.
+We have two subdirectories: 
+</p><ul>
+<li><strong>sample</strong> a directory containing an example of sources using that archetype. The important things we have in that directory are a <code>pillar.conf</code> file and an <code>index.pillar</code> (maybe other .pillar files)</li>
+<li><strong>support</strong> contains mustache, latex or css and other related files that forms the archetype. Here we have a subdirectory <strong>templates</strong> which contains directories according to each type of output we can generate with this archetype. We can have an <strong>html</strong>, <strong>latex</strong> or <strong>epub</strong> directory.</li>
+</ul>
+
+<p>
+So the pillar archetype installation command copies the content of <strong>support</strong> directory and put it in a <strong>_support</strong> directory under our project directory. <strong>sample</strong> directory contents are pasted directly at the root of our project. Then we have a project directory with 
+some example files and <strong>_support</strong> directory for the archetype.
+</p>
+<p>
+
+<figure>
+	<img src="figures/archetype_install.png" alt="Archetype installation"/>
+	<figcaption>Archetype installation</figcaption>
+</figure>
+</p>
+<h4>Write some chapters</h4>
+
+<p>
+We have all the architecture to start writing our book. Here we could notice a pre-installed <strong>Chapters</strong> directory. The book archetype is especially made for writing books, so it supposes we are going to have chapters in our book.
+</p>
+<p>
+Let's start with a chapter showing pillar installation. 
+</p>
+<p>
+Just create a file named <code>PillarInstallation.pillar</code> under <strong>Chapters</strong> directory and put this content in.
+</p>
+<figure><pre><code>	[[[language=bash
+	#for SSH cloning
+	$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
+	#for HTTPS cloning
+	$ git clone https://github.com/pillar-markup/pillar.git -b dev-7
+	]]]
+
+	The branch ==dev-7== is the branch with latest available changes. The above command creates a
+	directory named ==pillar== in your file system.
+
+	Now we should build pillar in command line. We get in the repository
+	and execute the script.
+
+	[[[language=bash
+	$ cd pillar
+	$ ./scripts/build.sh
+	# This will create a buil directory under pillar directory. This directory contains the executable.
+	]]]
+
+	Let's move installation directory to ==.pillar== and add path our environment variables.
+
+	[[[
+	$ cd ..
+	$ mv pillar ~/.pillar
+	# update path in your .bashrc or .zshrc
+	$ export PILLAR_HOME=&quot;$HOME/.pillar/build&quot;
+	$ export PATH=&quot;$PATH:$PILLAR_HOME&quot;
+	]]]
+
+	We currently have all tools for generating Html files from pillar.</code></pre><figcaption></figcaption></figure>
+
+<p class="note">We are going to explain a bite pillar syntax. </p>
+<p>
+These elements <strong>[[[...]]]</strong> are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar).
+According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable, we check if our expressions ar correct. 
+Have a look <a href="here"></a>.
 </p>
 
 
-<h4>Write some chapters</h4>
 
 
 
