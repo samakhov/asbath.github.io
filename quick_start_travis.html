@@ -235,7 +235,7 @@ Often, Travis need to access to some project's files and do some actions with th
 So go to your account settings (not a specific project settings) by clicking on a right top button <code>Settings</code>.
 
 <figure>
-	<img src="settings.png" alt="Account Settings Button"/>
+	<img src="settings_github.png" alt="Account Settings Button"/>
 	<figcaption>Account Settings Button</figcaption>
 </figure>
 </p>
@@ -260,8 +260,77 @@ But generally, <code>repo</code> rights are good enough.
 	<img src="selectWrights.png" alt="Token Rights"/>
 	<figcaption>Token Rights</figcaption>
 </figure>
-
 </p>
+<p>
+Click on <code>Generate token</code> button at bottom of the page to generate your token with rights you specified.
+</p>
+<p>
+
+<figure>
+	<img src="token_generated.png" alt="Generated token"/>
+	<figcaption>Generated token</figcaption>
+</figure>
+</p>
+<p>
+The number at the top of list in the above image is the generated token. Copy that token and save it in a safe place.
+</p>
+<h3>Add token to Travis</h3>
+
+<p>
+We are now going to add the generated token to Travis configuration as an environment variable. It will be automatically encrypted.
+</p>
+<p>
+On Travis, Go to Settings of your project.
+</p>
+<p>
+On settings page, you have a section named <strong>Environment variables</strong>.
+</p>
+<p>
+
+<figure>
+	<img src="settings.png" alt="Environment variables"/>
+	<figcaption>Environment variables</figcaption>
+</figure>
+</p>
+<p>
+Just provide as name <strong>GH_TOKEN</strong> (or something else) and paste the token in value field.
+</p>
+<p>
+When clicking <code>Add</code>, you will have a new encrypted environment variable named <strong>GH_TOKEN</strong>.
+</p>
+
+<h3>For Pillar users</h3>
+
+<p>
+For people who are working with pillar to build books or website, here's a kind of <strong>.travis.yml</strong> file showing how to configure our process.
+</p>
+<figure><pre><code>language: smalltalk
+
+os:
+    - linux
+
+smalltalk:
+    - Pharo-6.1
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar &amp;&amp; ./scripts/build.sh &amp;&amp; cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html &amp;&amp; touch .nojekyll &amp;&amp; cd ..
+
+deploy:
+   provider: pages
+   target-branch: master
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: source</code></pre><figcaption></figcaption></figure>
+
 
   </div>
 </div>
