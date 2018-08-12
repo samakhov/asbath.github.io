@@ -68,7 +68,7 @@ So go to your account settings (not a specific project settings) by clicking on 
 After that, click specifically on ==Developer Settings== in the left menu, for access to more advanced settings.
 
 Just click on ==Personal Access Tokens== and you will get a page explaining what a token is and a button to generate a new token.
-+Personal Access Tokens>file://tokens+
++Personal Access Tokens>file://tokens.png+
 
 Click on ==Generate new token== button and choose the right you token needs. These rights depends on which work you have to do with that token.
 But generally, ==repo== rights are good enough.
