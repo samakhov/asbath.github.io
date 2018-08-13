@@ -9,4 +9,4 @@ Contact me. I'm open for collaborations.
 All that you need about lost people.
 I will help you find them
 
-${docList:path=blogs|sort=date}$
+${docList:path=blogs|sort=date|limit=4}$
