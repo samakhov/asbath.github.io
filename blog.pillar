@@ -5,8 +5,6 @@
 
 !Blog
 
-Contact me. I'm open for collaborations.
-All that you need about lost people.
-I will help you find them
+Here is a collection of tutorials concerning some of my works. Main domains are Pillar, Travis, Building a Website, Publish a Pillar Book.
 
 ${docList:path=blogs|sort=date|limit=4}$
