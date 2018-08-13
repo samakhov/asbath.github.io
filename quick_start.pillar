@@ -78,49 +78,6 @@ Pay attention ==index.pillar== is including all other files.
 
 !!! Deploy on Github
 
-Just add a ==.travis.yml== at the root of your repository and add a ==GH_TOKEN== to your project in Travis.
-
-You don't know how to set properly a travis account, have a look *here>https://www.raywenderlich.com/1618-travis-ci-tutorial-getting-started*
-
-[[[
-language: smalltalk
-
-os:
-    - linux
-
-smalltalk:
-    - Pharo-6.1
-
-install:
-    # Pillar installation
-    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
-    - cd .pillar && ./scripts/build.sh && cd ..
-
-script:
-    - .pillar/build/pillar build html
-    - cd _result/html && touch .nojekyll && cd ..
-
-deploy:
-   provider: pages
-   skip-cleanup: true
-   github-token: $GH_TOKEN
-   keep-history: true
-   local_dir: _result/html
-   on:
-     branch: master
-]]]
-
-
-@@note This script globally download Pillar, build the site from pillar files pushed on ""source"" branch and push generated files (located in ''_result/html'') on ""master"" GitHub branch. It means we should create ""master"" and ""source"" branch and only push to ""source"" branch.
-
-We are now going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
-
-+Travis settings>file://travis_settings.png+
-
-On your project Settings in Travis, you have a menu labelled ""Environment variables""
-where you can add variables (those variables will be automatically encrypted).
-
-+Add Token>file://settings.png+
-
-
-
+You want to have acces to your website via Internet. You have a free hosting service provided by Gihtub.
+To use it, just create a Github repository containing your pillar book files. To automatize your book building,
+you are going to use Travis. Follow this *quick start for Travis>quick_start_travis.pillar*.
