@@ -36,12 +36,12 @@ deploy:
 
 We are now going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
-+Travis settings>file://travis_settings.png+
++Travis settings>file://images/travis_settings.png+
 
 On your project Settings in Travis, you have a menu labelled ""Environment variables""
 where you can add variables (those variables will be automatically encrypted).
 
-+Add Token>file://settings.png+
++Add Token>file://images/settings.png+
 
 
 

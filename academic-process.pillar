@@ -37,7 +37,7 @@ Both in these cases, creating the repository on GitHub is the same.
 For that, we need to follow these steps:
 
 - In the upper-right corner of any page, click ""+"", and then click ""New repository"" as: 
-+New repository>file://new.png+
++New repository>file://images/new.png+
 - Type a name for your repository.
 -# For personal website you need to named it as ""myAccount.github.io""
 -# For the second case, you can named it as you want, ""myProject"" for example.
@@ -48,7 +48,7 @@ For that, we need to follow these steps:
 - Now click ""Create repository"".
 
 Your GitHub repository is now created and look like that.
-+GitHub repository>file://repo_created.png+
++GitHub repository>file://images/repo_created.png+
 
 
 
@@ -79,7 +79,7 @@ $ pillar serve -p xxxx -w &
 ]]]
 
 After these steps, you will get a default website as: 
-+Skeleton website>file://default.png+
++Skeleton website>file://images/default.png+
 
 !! Editing your site
 
@@ -163,7 +163,7 @@ We can notice that ==toc.pillar== is the file used to declare different menus.
 
 Now you should get a page like that:
 
-+New Page>file://teach.png+
++New Page>file://images/teach.png+
 
 @@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*.
 
@@ -180,7 +180,7 @@ This way, on every commit we can build our site and push our html to our website
 Automatic building and hosting of our website is using Travis Continuous Integration. So let's launch to Travis via our GitHub account following *this>https://trailhead.salesforce.com/en/modules/sfdx_travis_ci/units/sfdx_travis_ci_setup#Tdxn4tBKheading7*.
 
 We can now activate our GitHub repository in Travis:
-+Travis activation>file://activate.png+
++Travis activation>file://images/activate.png+
 
 This will automatically add travis as a service in your GitHub repository.
 
@@ -225,12 +225,12 @@ deploy:
 
 We are now going to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
-+Travis settings>file://travis_settings.png+
++Travis settings>file://images/travis_settings.png+
 
 On your project Settings in Travis, you have a menu labelled ""Environment variables""
 where you can add variables (those variables will be automatically encrypted).
 
-+Add Token>file://settings.png+
++Add Token>file://images/settings.png+
 
 After all of that, you can commit your changes to GitHub and wait for your website on:
 ""https://myAccount.github.io/""
