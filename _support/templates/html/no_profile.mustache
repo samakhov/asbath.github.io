@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="theme" content="hugo-academic">
     <meta name="theme-color" content="primary">
-	<title></title>
+	<title>{{title}}</title>
 
     <!-- Highlight js -->
     <link rel="stylesheet" href="/_support/html/highlightjs/styles/default.css">
@@ -31,7 +31,7 @@
 
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '', 'auto');
+      ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
       ga('require', 'eventTracker');
       ga('require', 'outboundLinkTracker');
       ga('require', 'urlChangeTracker');
@@ -55,7 +55,7 @@
 
 
 	<div class="article-header">
-	<span class="article-header-caption">Asbathou BIYALOU-SAMA</span>
+	<span class="article-header-caption">{{site_name}}</span>
 </div>
 
 	<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        Asbathou BIYALOU-SAMA
+        {{site_name}}
       </a>
     </div>
 
@@ -79,31 +79,13 @@
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav navbar-right">
-		
+		{{# toc.children}}
         <li class="nav-item">
-          <a href="/index.html#about me">
-            <span>About me</span>
+          <a href="{{baseurl}}{{href}}">
+            <span>{{name}}</span>
           </a>
         </li>
-		
-        <li class="nav-item">
-          <a href="/projects.html#projects">
-            <span>Projects</span>
-          </a>
-        </li>
-		
-        <li class="nav-item">
-          <a href="/coordinates.html#coordinates">
-            <span>Coordinates</span>
-          </a>
-        </li>
-		
-        <li class="nav-item">
-          <a href="/blog.html#blog">
-            <span>Blog</span>
-          </a>
-        </li>
-		
+		{{/ toc.children}}
       
       </ul>
       
@@ -118,31 +100,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12">
-	<h1>Blog</h1>
-
-<p>
-Contact me. I'm open for collaborations.
-All that you need about lost people.
-I will help you find them
-</p>
-<h2>Write A Book In Html using Pillar</h2>
-
-<p>
-In this tutorial we are going to write a document (more precisely a book with chapters) with pillar syntax and generate in Html.
-</p><a href="blogs/write-a-book-in-html.html">Read more</a><h2>Travis Quick Start</h2>
-
-<p>
-If you are here, this is because you are bored of piece of tutorials trying to show you the way to make your project built by Travis when committing on Github. Or I just send you here from a <a href="https://github.com/pillar-markup/pillar/">Pillar</a>
-tutorial.
-</p><a href="blogs/quick_start_travis.html">Read more</a><h2>Quick Start</h2>
-
-<p>
-You just want to generate your book in HTML, you know Pillar already, this tutorial is for you.
-</p><a href="blogs/quick_start.html">Read more</a><h1>How to build a website with Pillar</h1>
-
-<p>
-This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
-</p><a href="blogs/academic-process.html">Read more</a>
+	{{{content}}}
       </div>
     </div>
   </div>
