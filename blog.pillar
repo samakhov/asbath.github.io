@@ -1,6 +1,6 @@
 {
 	"htmlWriter": #html,
-	"template": "blog.mustache"
+	"template": "no_profile.mustache"
 }
 
 !Blog
