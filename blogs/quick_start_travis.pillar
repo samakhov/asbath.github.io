@@ -1,6 +1,7 @@
 {
 
-	"title": "Travis Quick start"
+	"title": "Travis Quick start",
+	"template": "blog.mustache"
 }
 
 !! Travis Quick Start

@@ -1,6 +1,7 @@
 {
 
-	"title": "Write A Book In Html using Pillar"
+	"title": "Write A Book In Html using Pillar",
+	"template": "blog.mustache"
 
 }
 

@@ -1,5 +1,6 @@
 {
-	"title": "How to build a website with Pillar"
+	"title": "How to build a website with Pillar",
+	"template": "blog.mustache"
 
 }
 
