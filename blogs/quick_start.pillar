@@ -1,5 +1,6 @@
 {
-	"title": "Quick start with Pillar"
+	"title": "Quick start with Pillar",
+	"template": "blog.mustache"
 
 }
 
