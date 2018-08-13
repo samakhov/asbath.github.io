@@ -1,6 +1,6 @@
 {
 	"htmlWriter": #html,
-	"template": "no_profile.mustache"
+	"template": "main.mustache"
 }
 
 !Coordinates
