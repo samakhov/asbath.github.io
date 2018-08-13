@@ -1,6 +1,9 @@
+{
+	"title": "How to build a website with Pillar"
+
+}
+
 This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
-
-
 
 
 !! Setting up the environment
