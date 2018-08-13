@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="theme" content="hugo-academic">
     <meta name="theme-color" content="primary">
-	<title>Quick start with Pillar</title>
+	<title></title>
 
     <!-- Highlight js -->
     <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
@@ -131,93 +131,65 @@
 	
   </div>
   <div class="col-xs-12 col-md-8">
-	<h2>Quick Start</h2>
-
+	
 <p>
-You just want to generate your book in HTML, you know Pillar already, this tutorial is for you.
+Just add a <code>.travis.yml</code> at the root of your repository and add a <code>GH_TOKEN</code> to your project in Travis.
 </p>
 <p>
-Some features:
-</p><ul>
-<li>Table of contents: With the new <strong>book</strong> archetype, a document generated in Html has a table of contents allowing users to generate which is a resume of titles present in the document.</li>
-<li>Template per file: Now when writing a book or website with Pillar, we have the possibility to specify for each file a different template. We use this feature to have different presentations on our websites.</li>
-</ul>
-
-
-<h3>Quick Install</h3>
-<p>
-All the new features (new archetypes, architecture, book testing) are on branch <strong>dev-7</strong>
+You don't know how to set properly a travis account, have a look <a href="https://www.raywenderlich.com/1618-travis-ci-tutorial-getting-started">here</a>
 </p>
-<figure><pre><code>#for SSH cloning
-$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
-#for HTTPS cloning
-$ git clone https://github.com/pillar-markup/pillar.git -b dev-7
-$ cd pillar
-$ ./scripts/build.sh
-$ cd ..
-$ mv pillar ~/.pillar
-# update path in your .bashrc or .zshrc
-$ export PILLAR_HOME=&quot;$HOME/.pillar/build&quot;
-$ export PATH=&quot;$PATH:$PILLAR_HOME&quot;</code></pre><figcaption></figcaption></figure>
+<figure><pre><code>language: smalltalk
 
-<p>
-These commands will install pillar on your machine and provide you a <code>pillar</code> executable.
-</p>
-<h3>Start your project</h3>
+os:
+    - linux
 
-<p>
-Just install a chosen archetype and compile in your desired format
-</p>
-<figure><pre><code>$ pillar archetype book
-$ pillar build html</code></pre><figcaption></figcaption></figure>
+smalltalk:
+    - Pharo-6.1
 
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar &amp;&amp; ./scripts/build.sh &amp;&amp; cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html &amp;&amp; touch .nojekyll &amp;&amp; cd ..
+
+deploy:
+   provider: pages
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: master</code></pre><figcaption></figcaption></figure>
+
+
+<p class="note">This script globally download Pillar, build the site from pillar files pushed on <strong>source</strong> branch and push generated files (located in <em>_result/html</em>) on <strong>master</strong> GitHub branch. It means we should create <strong>master</strong> and <strong>source</strong> branch and only push to <strong>source</strong> branch.</p>
 <p>
-You know Pharo, you want to see the generated book quickly. Start a server in <code>yourProject/_result/html/</code>.
+We are now going to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis
 </p>
 <p>
-You can use this in Pharo7 and Pharo6.1
-</p>
-<figure><pre><code>(ZnServer defaultOn: 1701) start.
 
-ZnServer default delegate: ((ZnStaticFileServerDelegate new) 
-directory: '/home/abiyalou/Documents/STAGE/Perso/samakhov.github.io/_result/html' asFileReference;
-yourself).</code></pre><figcaption></figcaption></figure>
-
-<p>
-Enjoy your website locally on <code>localhost:1701</code>.
+<figure>
+	<img src="travis_settings.png" alt="Travis settings"/>
+	<figcaption>Travis settings</figcaption>
+</figure>
 </p>
 <p>
-You want to deploy on Github and host it using Github Pages, follow the next section.
-</p>
-
-<h3>How to use Table of contents (review)</h3>
-
-<p>
-You could notice that, there is no table of contents displayed. We have to change some things in the conf file.
+On your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
+where you can add variables (those variables will be automatically encrypted).
 </p>
 <p>
-<strong>How does it work??</strong> The table of contents starts looking for titles via a specified file. For example, when you have an <code>index.pillar</code> including
-other pillar files (different chapters of your book), Pillar visits titles starting from <code>index.pillar</code>.
+
+<figure>
+	<img src="settings.png" alt="Add Token"/>
+	<figcaption>Add Token</figcaption>
+</figure>
 </p>
-<p>
-So to have a table of contents displayed, you have to decomment a line in <code>pillar.conf</code>. The first line of the below picture.
-By decommenting this line, you are telling Pillar to starts looking for titles in <code>index.pillar</code> and so on.
-Pay attention <code>index.pillar</code> is including all other files.
-</p>
-<figure><pre><code>  #'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment,
-  &quot;latexWriter&quot; : #'latex:sbabook',
-  &quot;htmlWriter&quot;: #html</code></pre><figcaption></figcaption></figure>
 
 
 
-<h3>Deploy on Github</h3>
-
-<p>
-You want to have acces to your website via Internet. You have a free hosting service provided by Gihtub.
-To use it, just create a Github repository containing your pillar book files. To automatize your book building,
-you are going to use Travis. Follow this <a href="quick_start_travis.html">quick start for Travis</a>.
-
-</p>
 
   </div>
 </div>
