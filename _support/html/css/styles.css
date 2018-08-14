@@ -974,6 +974,7 @@ footer {
   left: 0;
   padding: 1rem;
   position: absolute;
+  margin-top: 15px;
 }
 
 footer p {
