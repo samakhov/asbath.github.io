@@ -115,10 +115,10 @@
 
 <!-- Projects widget -->
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-	<h2>How to build a website with Pillar</h2>
+	<div class="container">
+		<div class="row">
+  		<div class="col-xs-12 col-md-12">
+			<h2>How to build a website with Pillar</h2>
 
 <p>
 This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
@@ -464,22 +464,24 @@ $ git push -u origin master</code></pre><figcaption>Commit your project on maste
 You can now enjoy the continuous integration. Every time you modify a Pillar, commit it on github and you will see your website automatically updated.
 
 </p>
-      </div>
-    </div> 
-  <div class="row justify-content-md-center">
-    <div id="disqus_thread"></div>
-  </div>
-  <script>
-
- (function() { // DON'T EDIT BELOW THIS LINE
- var d = document, s = d.createElement('script');
-    s.src = 'https://www-samakhov-github-io.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);})();
+  		</div>
+		</div>
+		<div class="row justify-content-md-center">
+    	<div id="disqus_thread"></div>
+  	</div>
+  
+		<script>
+			var disqus_shortname='www-samakhov-github-io'
+ 			(function() { // DON'T EDIT BELOW THIS LINE
+ 			var d = document, s = d.createElement('script');
+    	s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    	s.setAttribute('data-timestamp', +new Date());
+   		(d.head || d.body).appendChild(s);})();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
+	</div>
 </section>
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
