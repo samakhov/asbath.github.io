@@ -364,18 +364,6 @@ The importants things you have to remember:
 - Generate a token in GitHub and Set it as variable in Travis
 - Check if GitHub Pages is activated on the good branch
 - Create a ==.travis.yml== in your project (at the root)
-- Activate the project in Travis
-- Generate a token in GitHub and Set it as variable in Travis
-- Check if GitHub Pages is activated on the good branch
-- Create a ==.travis.yml== in your project (at the root)
-- Activate the project in Travis
-- Generate a token in GitHub and Set it as variable in Travis
-- Check if GitHub Pages is activated on the good branch
-- Create a ==.travis.yml== in your project (at the root)
-- Activate the project in Travis
-- Generate a token in GitHub and Set it as variable in Travis
-- Check if GitHub Pages is activated on the good branch
-- Create a ==.travis.yml== in your project (at the root)
 
 In the ==.travis.yml== file, let's put this content.
 
