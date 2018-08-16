@@ -15,9 +15,9 @@ During this tutorial we are going to manage with these tools.
 
 -""Pillar""(*https://github.com/pillar-markup/pillar*) : the main tool, It generates documents in different formats as Html from pillar syntax.
 
--""Github""(*www.github.com*) :  for hosting our book on the web. It means you need to have a Github account, if not follow this *https://services.github.com/on-demand/intro-to-github/create-github-account*.
+-""Github""(*https://github.com*) :  for hosting our book on the web. It means you need to have a Github account, if not follow this *https://services.github.com/on-demand/intro-to-github/create-github-account*.
 
--""Travis""(*www.travis-ci.org*) :  for automating deployment services.
+-""Travis""(*https://travis-ci.org*) :  for automating deployment services.
 
 
 !!! Context of the book
@@ -191,7 +191,7 @@ Just create a file named ==PillarInstallation.pillar== under ""Chapters"" direct
 
 These elements ""[[[...]]]"" are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar).
 According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable, we check if our expressions ar correct. 
-Have a look *here*.
+Have a look here(coming soon).
 
 
 
