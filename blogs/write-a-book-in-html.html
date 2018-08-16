@@ -422,35 +422,34 @@ Let's propose a chapter showing more Pillar syntax.
 
 
 <p>
-Put this content in a file named <code>PillarSyntax.pillar</code> under <strong>Chapters</strong> folder and add it to <code>index.pillar<strong>.
-
+Put this content in a file named <code>PillarSyntax.pillar</code> under <strong>Chapters</strong> folder and add it to <code>index.pillar</code>.
+</p>
+<p>
 Now the <code>index.pillar</code> is looking like that.
-
-[[[
-!! Write An Html Book With Pillar Syntax
+</p>
+<figure><pre><code>!! Write An Html Book With Pillar Syntax
 	
 In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
 So let's start by installing Pillar.
 
 ${inputFile:path=Chapters/PillarInstallation.pillar}$
 
-${inputFile:path=Chapters/PillarSyntax.pillar}$
-
-]]]
+${inputFile:path=Chapters/PillarSyntax.pillar}$</code></pre><figcaption></figcaption></figure>
 
 
+<p>
 We have a book with all chapters, now we are going to configure the project.
+</p>
 
 
+<h4>Update <code>pillar.conf</code></h4>
 
-!!!! Update <code>pillar.conf</code>
-
+<p>
 Normally <code>pillar.conf</code> should like:
-
-[[[
-
+</p>
+<figure><pre><code>
 	{
-	  &quot;base_url&quot;: </strong>,
+	  &quot;base_url&quot;: &quot;&quot;,
 	  &quot;site_name&quot;: &quot;Pharo Book&quot;,
 	  &quot;title&quot;: &quot;The Pillar Super Book Archetype&quot;,
 	  &quot;attribution&quot;: &quot;The Pillar team&quot;,
@@ -463,24 +462,27 @@ Normally <code>pillar.conf</code> should like:
 	  #'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment,
 	  &quot;latexWriter&quot; : #'latex:sbabook',
 	  &quot;htmlWriter&quot;: #html
-	}
+	}</code></pre><figcaption></figcaption></figure>
 
-]]]
-
+<p>
 Let's change some attributes and modify two capital things.
-
+</p>
+<p>
 I propose <strong>Pillar Hand On</strong> as title. For keywords, <strong>installation, pillar, pharo, smalltalk, syntax</strong>.
-
+</p>
+<p>
 One important thing to specify is the <strong>base_url</strong> depending on the way you want to distribute your book.
 You want to use Github and have free access to the book via <strong>https://your_username.github.io/OurBook</strong>, then set <strong>base_url</strong> to <strong>/OurBook</strong>.
 (We named the repository <strong>OurBook</strong>).
-
+</p>
+<p>
 The new book archetype propose a table of contents element for Html output. So we are going to display the table of contents. 
 To do that, we need to decomment the line <strong>#'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment</strong>.
-In our book, we have an </code>index.pillar<code> including other chapters. So we specify </code>index.pillar<code> as entry point.
-Then set <strong>tocFile</strong> to <strong>index.pillar</strong>. Pillar looks for titles strating from </code>index.pillar<code>. So we are going to have a complete table of contents for all the book.
-
-Finally </code>pillar.conf== looks like:
+In our book, we have an <code>index.pillar</code> including other chapters. So we specify <code>index.pillar</code> as entry point.
+Then set <strong>tocFile</strong> to <strong>index.pillar</strong>. Pillar looks for titles strating from <code>index.pillar</code>. So we are going to have a complete table of contents for all the book.
+</p>
+<p>
+Finally <code>pillar.conf</code> looks like:
 </p>
 <figure><pre><code>	{
 	  &quot;base_url&quot;: &quot;/OurBook&quot;,
@@ -499,12 +501,71 @@ Finally </code>pillar.conf== looks like:
 	}</code></pre><figcaption></figcaption></figure>
 
 
+
+
 <h4>Configure Travis</h4>
 
 <p>
-We now have a book ready for deployment.
-
+We now have a book ready for deployment. You already have a hosting service (different from GitHub Pages) and you want to host your book on that website, You copy generated html files and follow the 
+deployment process according to your provider.
+When you build your book in Html, generated files are located in <strong>_result/html</strong> under the project directory.
 </p>
+
+<p>
+Or You want to have a free hosting on Github via GitHub Pages. If that, let's automatize this process.
+</p>
+<p>
+The context is:
+</p><ul>
+<li>You have a GitHub account</li>
+<li>You have a GitHub repository</li>
+<li>This repository contains your project files</li>
+<li>You want this process : write your <code>.pillar</code> files, commit on GitHub, have your books updated on the web</li>
+<li>You don't have a Travis account and don't know how it works</li>
+</ul>
+
+<p>
+Your are in that context, follow this <a href="quick_start_travis.html">quick start for Travis</a>. It will help you create a Travis account linked to your GithHub account.
+By following the tutorial, you configure Travis on your project.
+</p>
+<p>
+The importants things you have to remember:
+</p><ul>
+<li>Activate the project in Travis</li>
+<li>Generate a token in GitHub and Set it as variable in Travis</li>
+<li>Check if GitHub Pages is activated on the good branch</li>
+<li>Create a <code>.travis.yml</code> in your project (at the root)</li>
+</ul>
+
+<p>
+In the <code>.travis.yml</code> file, let's put this content.
+</p>
+<figure><pre><code>language: smalltalk
+
+os:
+    - linux
+
+smalltalk:
+    - Pharo-6.1
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar &amp;&amp; ./scripts/build.sh &amp;&amp; cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html &amp;&amp; touch .nojekyll &amp;&amp; cd ..
+
+deploy:
+   provider: pages
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: master</code></pre><figcaption></figcaption></figure>
+
   		</div>
 		</div>
 		<div class="row justify-content-md-center">

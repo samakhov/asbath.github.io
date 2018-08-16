@@ -260,7 +260,7 @@ Let's propose a chapter showing more Pillar syntax.
 ]]]
 
 
-Put this content in a file named ==PillarSyntax.pillar== under ""Chapters"" folder and add it to ==index.pillar"".
+Put this content in a file named ==PillarSyntax.pillar== under ""Chapters"" folder and add it to ==index.pillar==.
 
 Now the ==index.pillar== is looking like that.
 
@@ -340,6 +340,59 @@ Finally ==pillar.conf== looks like:
 ]]]
 
 
+
+
 !!!! Configure Travis
 
-We now have a book ready for deployment.
+We now have a book ready for deployment. You already have a hosting service (different from GitHub Pages) and you want to host your book on that website, You copy generated html files and follow the 
+deployment process according to your provider.
+When you build your book in Html, generated files are located in ""_result/html"" under the project directory.
+
+
+Or You want to have a free hosting on Github via GitHub Pages. If that, let's automatize this process.
+
+The context is:
+- You have a GitHub account
+- You have a GitHub repository
+- This repository contains your project files
+- You want this process : write your ==.pillar== files, commit on GitHub, have your books updated on the web
+- You don't have a Travis account and don't know how it works
+
+Your are in that context, follow this *quick start for Travis>quick_start_travis.pillar*. It will help you create a Travis account linked to your GithHub account.
+By following the tutorial, you configure Travis on your project.
+
+The importants things you have to remember:
+- Activate the project in Travis
+- Generate a token in GitHub and Set it as variable in Travis
+- Check if GitHub Pages is activated on the good branch
+- Create a ==.travis.yml== in your project (at the root)
+
+In the ==.travis.yml== file, let's put this content.
+
+[[[
+language: smalltalk
+
+os:
+    - linux
+
+smalltalk:
+    - Pharo-6.1
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar && ./scripts/build.sh && cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html && touch .nojekyll && cd ..
+
+deploy:
+   provider: pages
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+     branch: master
+]]]
