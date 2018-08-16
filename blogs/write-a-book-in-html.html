@@ -137,7 +137,7 @@ During this tutorial we are going to manage with these tools.
 </ul>
 
 <ul>
-<li><strong>Travis</strong>(<a href="https://travis-ci.org">https://travis-ci.org</a>) :  for automating deployment services.</li>
+<li><strong>Travis</strong>(<a href="https://travis-ci.org">https://travis-ci.org</a>) :  for automatic deployment.</li>
 </ul>
 
 
@@ -333,7 +333,11 @@ Here we could notice a pre-installed <strong>Chapters</strong> directory. The bo
 <p>
 Just create a file named <code>PillarInstallation.pillar</code> under <strong>Chapters</strong> directory and put this content in.
 </p>
-<figure><pre><code>	[[[language=bash
+<figure><pre><code>	!!! Pillar Installation
+
+	A complete Pillar installation process.
+
+	[[[language=bash
 	#for SSH cloning
 	$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
 	#for HTTPS cloning
@@ -386,10 +390,93 @@ After registering this file, update <code>index.pillar</code>. Add the following
 <p>
 Let's propose a chapter showing more Pillar syntax.
 </p>
-<figure><pre><code>	+Archetype installation&gt;file://figures/archetype_install.png+</code></pre><figcaption></figcaption></figure>
+<figure><pre><code>	!!! Pillar Syntax
+	
+	In Pillar, you have titles speified using &quot;&quot;!&quot;&quot;. The number of &quot;&quot;!&quot;&quot; corresponds to the title level.
+
+	!!!! How to add a figure.
+
+	First we are going to organize our folders to have a more good and flexible architecture.
+	Create a folder named ==figures== under your project directory. This folder is going to contain all the figures of the project.
+
+	+Archetype installation&gt;file://figures/archetype_install.png+
+
+	The principal elements of this syntax &quot;&quot;+...+&quot;&quot;, &quot;&quot;&gt;&quot;&quot; and &quot;&quot;file://&quot;&quot;.
+	&quot;&quot;+&quot;&quot; elements are delimiters. The word before &quot;&quot;&gt;&quot;&quot; act as a title. After &quot;&quot;file://&quot;&quot; element you specify the path to the image.
+
+	
+	!!!! Links
+	
+	That *Pillar&gt;https://github.com/pillar-markup/pillar* is an external link. &quot;&quot;*&quot;&quot; elements are delimiters and &quot;&quot;Pillar&quot;&quot; stands for link. The part
+	after &quot;&quot;&gt;&quot;&quot; is the link location, the cible.
+	For internal links, this is the same syntax, link locations only have to finish by .pier or .pillar 
 
 
+	!!!! Formatting
 
+	To put a text in bold, just write &quot;&quot;text&quot;&quot;. For italic, write ''italic''.
+	You want underline a word, that is __underlined__.
+ 	&quot;&quot;-&quot;&quot; builds lists.
+
+	Here are some elements of syntax, for complete syntax, have a look at *Pillar syntax&gt;https://squarebracketassociates.github.io/Booklet-PublishingAPillarBooklet/PillarSyntax.html*</code></pre><figcaption></figcaption></figure>
+
+
+<p>
+Put this content in a file named <code>PillarSyntax.pillar</code> under <strong>Chapters</strong> folder and add it to ==index.pillar<strong>.
+
+Now the <code>index.pillar</code> is looking like that.
+
+[[[
+	!! Write An Html Book With Pillar Syntax
+	
+	In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
+	So let's start by installing Pillar.
+
+	${inputFile:path=Chapters/PillarInstallation.pillar}$
+
+	${inputFile:path=Chapters/PillarSyntax.pillar}$
+
+]]]
+
+
+We have a book with all chapters, now we are going to configure the project.
+
+!!!! Update <code>pillar.conf</code>
+
+Normally <code>pillar.conf</code> should like:
+
+[[[
+
+	{
+	  &quot;base_url&quot;: </strong>,
+	  &quot;site_name&quot;: &quot;Pharo Book&quot;,
+	  &quot;title&quot;: &quot;The Pillar Super Book Archetype&quot;,
+	  &quot;attribution&quot;: &quot;The Pillar team&quot;,
+	  &quot;series&quot;: &quot;Square Bracket tutorials&quot;,
+	  &quot;keywords&quot;: &quot;project template, Pillar, Pharo, Smalltalk&quot;,
+	  &quot;language&quot;: &quot;en-UK&quot;,
+	  &quot;epub-id&quot;: &quot;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&quot;,
+	  
+	  
+	  #'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment,
+	  &quot;latexWriter&quot; : #'latex:sbabook',
+	  &quot;htmlWriter&quot;: #html
+	}
+</p>
+<p>
+]]]
+</p>
+<p>
+Let's change some attributes and modify two capital things.
+</p>
+<p>
+I propose <strong>Pillar Hand On</strong> as title. For keywords, <strong>installation, pillar, pharo, smalltalk, syntax</strong>.
+</p>
+<p>
+One important thing to specify is the <strong>base_url</strong> depending on the way you want to distribute your book.
+You want to use Github and have free access to the book via <strong>https://your_username.github.io/OurBook</strong>, then set <strong>base_url</strong> to <strong>/OurBook</strong>.
+(We named the repository <strong>OurBook</strong>).
+</p>
 
 
 
