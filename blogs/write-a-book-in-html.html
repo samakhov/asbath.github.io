@@ -160,7 +160,7 @@ So our chapters are:
 <h3>Installation</h3>
 
 <p>
-Pillar project is available on Github. So we are going to clone it from and build from sources.
+Pillar project is available on Github. So we are going to clone it and build from sources.
 </p>
 <figure><pre><code class="bash">#for SSH cloning
 $ git clone git@github.com:pillar-markup/pillar.git -b dev-7
@@ -202,7 +202,7 @@ We are going to follow these steps:
 <li>Choose an archetype and install it on that repo</li>
 <li>Write some chapters of the book</li>
 <li>Update <code>pillar.conf</code></li>
-<li>Conffigure Travis</li>
+<li>Configure Travis</li>
 <li>Publish book on Github</li>
 </ul>
 
@@ -255,7 +255,7 @@ Your GitHub repository is now created and is empty (Just only a README.md file a
 <h4>Clone the repository</h4>
 
 <p>
-Now that the repository is created, clone it to your local machine.
+Now the repository is created, clone it to your local machine.
 </p>
 <p>
 Choose a directory anywhere in your machine and clone your repository.
@@ -311,10 +311,24 @@ some example files and <strong>_support</strong> directory for the archetype.
 <h4>Write some chapters</h4>
 
 <p>
-We have all the architecture to start writing our book. Here we could notice a pre-installed <strong>Chapters</strong> directory. The book archetype is especially made for writing books, so it supposes we are going to have chapters in our book.
+Before going through chapters writing, let's create an introduction file which is going to include all other files.
 </p>
 <p>
-Let's start with a chapter showing pillar installation. 
+Create a file <code>index.pillar</code> and put the below content in.
+</p>
+<figure><pre><code>	!! Write An Html Book With Pillar Syntax
+	
+	In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
+	So let's start by installing Pillar.</code></pre><figcaption></figcaption></figure>
+
+<p>
+We have all the architecture to start writing our chapters. These chapters are going to be included in <code>index.pillar</code>.
+</p>
+<p>
+Here we could notice a pre-installed <strong>Chapters</strong> directory. The book archetype is especially made for writing books, so it supposes we are going to have chapters in our book.
+</p>
+<p>
+<strong>Let's start with a chapter showing pillar installation.</strong>
 </p>
 <p>
 Just create a file named <code>PillarInstallation.pillar</code> under <strong>Chapters</strong> directory and put this content in.
@@ -353,9 +367,29 @@ Just create a file named <code>PillarInstallation.pillar</code> under <strong>Ch
 <p class="note">We are going to explain a bite pillar syntax. </p>
 <p>
 These elements <strong>[[[...]]]</strong> are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar).
-According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable, we check if our expressions ar correct. 
+According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable (only for smalltalk code), we check if our expressions ar correct. 
 Have a look here(coming soon).
 </p>
+<p>
+<strong><code>word</code></strong> is to specify a monospaced word.
+</p>
+<p>
+After registering this file, update <code>index.pillar</code>. Add the following line in the file.
+</p>
+<figure><pre><code>	${inputFile:path=Chapters/PillarInstallation.pillar}$</code></pre><figcaption></figcaption></figure>
+
+<p class="note">this is an annotation. During Pillar compilation, the annotation will be replaced by <code>PillarInstallation.pillar</code> contents. The file location is specified using <strong>path</strong>. Everytime we are going to add a new chapter, we are going to add the chapter in <code>index.pillar</code> by doing the above manipulation.</p>
+
+<p>
+<strong>Add A New Chapter</strong>
+</p>
+<p>
+Let's propose a chapter showing more Pillar syntax.
+</p>
+<figure><pre><code>	+Archetype installation&gt;file://figures/archetype_install.png+</code></pre><figcaption></figcaption></figure>
+
+
+
 
 
 
