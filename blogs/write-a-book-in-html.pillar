@@ -28,8 +28,6 @@ So our chapters are:
 
 -Safe Pillar installation on Ubuntu/MacOS
 -Text Changing with pillar styling elements
--Structure elements
-
 
 
 !!! Installation
@@ -396,3 +394,8 @@ deploy:
    on:
      branch: master
 ]]]
+
+
+!!!! Publish On GitHub
+
+
