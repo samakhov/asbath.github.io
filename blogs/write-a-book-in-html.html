@@ -422,24 +422,26 @@ Let's propose a chapter showing more Pillar syntax.
 
 
 <p>
-Put this content in a file named <code>PillarSyntax.pillar</code> under <strong>Chapters</strong> folder and add it to ==index.pillar<strong>.
+Put this content in a file named <code>PillarSyntax.pillar</code> under <strong>Chapters</strong> folder and add it to <code>index.pillar<strong>.
 
 Now the <code>index.pillar</code> is looking like that.
 
 [[[
-	!! Write An Html Book With Pillar Syntax
+!! Write An Html Book With Pillar Syntax
 	
-	In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
-	So let's start by installing Pillar.
+In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
+So let's start by installing Pillar.
 
-	${inputFile:path=Chapters/PillarInstallation.pillar}$
+${inputFile:path=Chapters/PillarInstallation.pillar}$
 
-	${inputFile:path=Chapters/PillarSyntax.pillar}$
+${inputFile:path=Chapters/PillarSyntax.pillar}$
 
 ]]]
 
 
 We have a book with all chapters, now we are going to configure the project.
+
+
 
 !!!! Update <code>pillar.conf</code>
 
@@ -462,25 +464,47 @@ Normally <code>pillar.conf</code> should like:
 	  &quot;latexWriter&quot; : #'latex:sbabook',
 	  &quot;htmlWriter&quot;: #html
 	}
-</p>
-<p>
+
 ]]]
-</p>
-<p>
+
 Let's change some attributes and modify two capital things.
-</p>
-<p>
+
 I propose <strong>Pillar Hand On</strong> as title. For keywords, <strong>installation, pillar, pharo, smalltalk, syntax</strong>.
-</p>
-<p>
+
 One important thing to specify is the <strong>base_url</strong> depending on the way you want to distribute your book.
 You want to use Github and have free access to the book via <strong>https://your_username.github.io/OurBook</strong>, then set <strong>base_url</strong> to <strong>/OurBook</strong>.
 (We named the repository <strong>OurBook</strong>).
+
+The new book archetype propose a table of contents element for Html output. So we are going to display the table of contents. 
+To do that, we need to decomment the line <strong>#'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment</strong>.
+In our book, we have an </code>index.pillar<code> including other chapters. So we specify </code>index.pillar<code> as entry point.
+Then set <strong>tocFile</strong> to <strong>index.pillar</strong>. Pillar looks for titles strating from </code>index.pillar<code>. So we are going to have a complete table of contents for all the book.
+
+Finally </code>pillar.conf== looks like:
 </p>
+<figure><pre><code>	{
+	  &quot;base_url&quot;: &quot;/OurBook&quot;,
+	  &quot;site_name&quot;: &quot;Pharo Book&quot;,
+	  &quot;title&quot;: &quot;Pillar Hand On&quot;,
+	  &quot;attribution&quot;: &quot;The Pillar team&quot;,
+	  &quot;series&quot;: &quot;Square Bracket tutorials&quot;,
+	  &quot;keywords&quot;: &quot;installation, pillar, pharo, smalltalk, syntax&quot;,
+	  &quot;language&quot;: &quot;en-UK&quot;,
+	  &quot;epub-id&quot;: &quot;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&quot;,
+	  
+	  
+	  &quot;tocFile&quot;: &quot;index.pillar&quot;,
+	  &quot;latexWriter&quot; : #'latex:sbabook',
+	  &quot;htmlWriter&quot;: #html
+	}</code></pre><figcaption></figcaption></figure>
 
 
+<h4>Configure Travis</h4>
 
+<p>
+We now have a book ready for deployment.
 
+</p>
   		</div>
 		</div>
 		<div class="row justify-content-md-center">

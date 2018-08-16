@@ -265,19 +265,21 @@ Put this content in a file named ==PillarSyntax.pillar== under ""Chapters"" fold
 Now the ==index.pillar== is looking like that.
 
 [[[
-	!! Write An Html Book With Pillar Syntax
+!! Write An Html Book With Pillar Syntax
 	
-	In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
-	So let's start by installing Pillar.
+In this tutorial we learn how to write a book and publish it online. We are going to use pillar syntax. 
+So let's start by installing Pillar.
 
-	${inputFile:path=Chapters/PillarInstallation.pillar}$
+${inputFile:path=Chapters/PillarInstallation.pillar}$
 
-	${inputFile:path=Chapters/PillarSyntax.pillar}$
+${inputFile:path=Chapters/PillarSyntax.pillar}$
 
 ]]]
 
 
 We have a book with all chapters, now we are going to configure the project.
+
+
 
 !!!! Update ==pillar.conf==
 
@@ -311,6 +313,33 @@ One important thing to specify is the ""base_url"" depending on the way you want
 You want to use Github and have free access to the book via ""https://your_username.github.io/OurBook"", then set ""base_url"" to ""/OurBook"".
 (We named the repository ""OurBook"").
 
+The new book archetype propose a table of contents element for Html output. So we are going to display the table of contents. 
+To do that, we need to decomment the line ""#'"tocFile": "index.pillar" if you have a index.pillar file containing the table of contents of your book': #comment"".
+In our book, we have an ==index.pillar== including other chapters. So we specify ==index.pillar== as entry point.
+Then set ""tocFile"" to ""index.pillar"". Pillar looks for titles strating from ==index.pillar==. So we are going to have a complete table of contents for all the book.
+
+Finally ==pillar.conf== looks like:
+
+[[[
+	{
+	  "base_url": "/OurBook",
+	  "site_name": "Pharo Book",
+	  "title": "Pillar Hand On",
+	  "attribution": "The Pillar team",
+	  "series": "Square Bracket tutorials",
+	  "keywords": "installation, pillar, pharo, smalltalk, syntax",
+	  "language": "en-UK",
+	  "epub-id": "urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809",
+	  
+	  
+	  "tocFile": "index.pillar",
+	  "latexWriter" : #'latex:sbabook',
+	  "htmlWriter": #html
+	}
+
+]]]
 
 
+!!!! Configure Travis
 
+We now have a book ready for deployment.
