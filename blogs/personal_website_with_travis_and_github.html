@@ -220,8 +220,40 @@ Your GitHub repository is now created and is empty (Just only a README.md file a
 	<img src="figures/created.png" alt="GitHub repository"/>
 	<figcaption>GitHub repository</figcaption>
 </figure>
-
 </p>
+
+
+<h2>Clone the repository</h2>
+
+<p>
+Now the repository is created, clone it to your local machine.
+</p>
+<p>
+Choose a directory anywhere in your machine and clone your repository.
+</p>
+<p class="note">:  this part means you have git command line tool installed. If not, follow <a href="https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">this</a>.</p>
+<figure><pre><code>#SSH
+$ git clone git@github.com:Your_github_username/Your_github_username.github.io.git
+#HTTPS
+$ git clone https://github.com/Your_github_username/Your_github_username.github.io.git</code></pre><figcaption></figcaption></figure>
+
+
+
+<h2>Install <strong>academic</strong></h2>
+
+<p>
+As you are building a website, you should install academic archetype.
+</p>
+<figure><pre><code>$ cd Your_github_username.github.io
+$ pillar archetype academic</code></pre><figcaption></figcaption></figure>
+
+<p class="note">The last command could generate errors.</p><ul>
+<li>pillar: command not recognized. Check the path in your .bashrc or .zshrc.</li>
+<li>archetype: is not a valid command. Maybe, you have another program with the same name pillar on your machine. Try to remove it or change the path order like this <strong>export PILLAR_HOME=&quot;~/.pillar/build:$PATH</strong>&quot;</li>
+<li>book does not exist. Check if a repository <code>book</code> is present under <code>.pillar/archetypes</code>, if not re-run <code>./scripts/build.sh</code></li>
+</ul>
+
+
   		</div>
 		</div>
 		<div class="row justify-content-md-center">
