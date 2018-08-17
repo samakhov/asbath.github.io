@@ -361,9 +361,7 @@ Just create a file named <code>PillarInstallation.pillar</code> under <strong>Ch
 
 	We currently have all tools for generating Html files from pillar.</code></pre><figcaption></figcaption></figure>
 
-<p class="note">We are going to explain a bite pillar syntax. These elements <strong>[[[...]]]</strong> are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar). According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable (only for smalltalk code), we check if our expressions ar correct. Have a look here(coming soon).</p><p>
-<strong>==word==</strong> is to specify a monospaced word.
-</p>
+<p class="note">We are going to explain a bite pillar syntax. These elements <strong>[[[...]]]</strong> are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar). According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable (only for smalltalk code), we check if our expressions ar correct. Have a look here(coming soon). <strong>==word==</strong> is to specify a monospaced word.</p>
 <p>
 After registering this file, update <code>index.pillar</code>. Add the following line in the file.
 </p>
@@ -379,7 +377,7 @@ Let's propose a chapter showing more Pillar syntax.
 </p>
 <figure><pre><code>!!! Pillar Syntax
 	
-In Pillar, you have titles speified using &quot;&quot;!&quot;&quot;. The number of &quot;&quot;!&quot;&quot; corresponds to the title level.
+In Pillar, you have titles specified using &quot;&quot;!&quot;&quot;. The number of &quot;&quot;!&quot;&quot; corresponds to the title level.
 
 !!!! How to add a figure.
 
@@ -422,10 +420,10 @@ ${inputFile:path=Chapters/PillarInstallation.pillar}$
 
 ${inputFile:path=Chapters/PillarSyntax.pillar}$</code></pre><figcaption></figcaption></figure>
 
-
 <p>
 We have a book with all chapters, now we are going to configure the project.
 </p>
+
 
 
 <h4>Update <code>pillar.conf</code></h4>
@@ -434,21 +432,21 @@ We have a book with all chapters, now we are going to configure the project.
 Normally <code>pillar.conf</code> should like:
 </p>
 <figure><pre><code>
-	{
-	  &quot;base_url&quot;: &quot;&quot;,
-	  &quot;site_name&quot;: &quot;Pharo Book&quot;,
-	  &quot;title&quot;: &quot;The Pillar Super Book Archetype&quot;,
-	  &quot;attribution&quot;: &quot;The Pillar team&quot;,
-	  &quot;series&quot;: &quot;Square Bracket tutorials&quot;,
-	  &quot;keywords&quot;: &quot;project template, Pillar, Pharo, Smalltalk&quot;,
-	  &quot;language&quot;: &quot;en-UK&quot;,
-	  &quot;epub-id&quot;: &quot;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&quot;,
+{
+  &quot;base_url&quot;: &quot;&quot;,
+  &quot;site_name&quot;: &quot;Pharo Book&quot;,
+  &quot;title&quot;: &quot;The Pillar Super Book Archetype&quot;,
+  &quot;attribution&quot;: &quot;The Pillar team&quot;,
+  &quot;series&quot;: &quot;Square Bracket tutorials&quot;,
+  &quot;keywords&quot;: &quot;project template, Pillar, Pharo, Smalltalk&quot;,
+  &quot;language&quot;: &quot;en-UK&quot;,
+  &quot;epub-id&quot;: &quot;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&quot;,
 	  
 	  
-	  #'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment,
-	  &quot;latexWriter&quot; : #'latex:sbabook',
-	  &quot;htmlWriter&quot;: #html
-	}</code></pre><figcaption></figcaption></figure>
+  #'&quot;tocFile&quot;: &quot;index.pillar&quot; if you have a index.pillar file containing the table of contents of your book': #comment,
+  &quot;latexWriter&quot; : #'latex:sbabook',
+  &quot;htmlWriter&quot;: #html
+}</code></pre><figcaption></figcaption></figure>
 
 <p>
 Let's change some attributes and modify two capital things.
@@ -470,21 +468,21 @@ Then set <strong>tocFile</strong> to <strong>index.pillar</strong>. Pillar looks
 <p>
 Finally <code>pillar.conf</code> looks like:
 </p>
-<figure><pre><code>	{
-	  &quot;base_url&quot;: &quot;/OurBook&quot;,
-	  &quot;site_name&quot;: &quot;Pharo Book&quot;,
-	  &quot;title&quot;: &quot;Pillar Hand On&quot;,
-	  &quot;attribution&quot;: &quot;The Pillar team&quot;,
-	  &quot;series&quot;: &quot;Square Bracket tutorials&quot;,
-	  &quot;keywords&quot;: &quot;installation, pillar, pharo, smalltalk, syntax&quot;,
-	  &quot;language&quot;: &quot;en-UK&quot;,
-	  &quot;epub-id&quot;: &quot;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&quot;,
+<figure><pre><code>{
+  &quot;base_url&quot;: &quot;/OurBook&quot;,
+  &quot;site_name&quot;: &quot;Pharo Book&quot;,
+  &quot;title&quot;: &quot;Pillar Hand On&quot;,
+  &quot;attribution&quot;: &quot;The Pillar team&quot;,
+  &quot;series&quot;: &quot;Square Bracket tutorials&quot;,
+  &quot;keywords&quot;: &quot;installation, pillar, pharo, smalltalk, syntax&quot;,
+  &quot;language&quot;: &quot;en-UK&quot;,
+  &quot;epub-id&quot;: &quot;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&quot;,
 	  
 	  
-	  &quot;tocFile&quot;: &quot;index.pillar&quot;,
-	  &quot;latexWriter&quot; : #'latex:sbabook',
-	  &quot;htmlWriter&quot;: #html
-	}</code></pre><figcaption></figcaption></figure>
+  &quot;tocFile&quot;: &quot;index.pillar&quot;,
+  &quot;latexWriter&quot; : #'latex:sbabook',
+  &quot;htmlWriter&quot;: #html
+}</code></pre><figcaption></figcaption></figure>
 
 
 
