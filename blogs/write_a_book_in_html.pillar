@@ -15,7 +15,7 @@ During this tutorial we are going to manage with these tools.
 
 -""Pillar""(*https://github.com/pillar-markup/pillar*) : the main tool, It generates documents in different formats as Html from pillar syntax.
 
--""Github""(*https://github.com*) :  for hosting our book on the web. It means you need to have a Github account, if not follow this *https://services.github.com/on-demand/intro-to-github/create-github-account*.
+-""GitHub""(*https://github.com*) :  for hosting our book on the web. It means you need to have a GitHub account, if not follow this *https://services.github.com/on-demand/intro-to-github/create-github-account*.
 
 -""Travis""(*https://travis-ci.org*) :  for automatic deployment.
 
@@ -32,7 +32,7 @@ So our chapters are:
 
 !!! Installation
 
-Pillar project is available on Github. So we are going to clone it and build from sources.
+Pillar project is available on GitHub. So we are going to clone it and build from sources.
 
 [[[language=bash
 #for SSH cloning
@@ -69,16 +69,16 @@ We currently have all tools for generating Html files from pillar.
 !!! Writing the book
 
 We are going to follow these steps:
-- Create a repository on Github
+- Create a repository on GitHub
 - Clone that empty repository
 - Choose an archetype and install it on that repo
 - Write some chapters of the book
 - Update ==pillar.conf==
 - Configure Travis
-- Publish book on Github
+- Publish book on GitHub
 
 
-!!!! Create a Github repository
+!!!! Create a GitHub repository
 
 We choose to name our repository as ""OurBook"".
 
@@ -163,7 +163,7 @@ We have all the architecture to start writing our chapters. These chapters are g
 Just create a file named ==PillarInstallation.pillar== under ""Chapters"" directory and put this content in.
 
 [[[
-	!!! Pillar Installation
+	!! Pillar Installation
 
 	A complete Pillar installation process.
 
@@ -216,11 +216,11 @@ ${inputFile:path=Chapters/PillarInstallation.pillar}$
 Let's propose a chapter showing more Pillar syntax.
 
 [[[
-!!! Pillar Syntax
+!! Pillar Syntax
 	
 In Pillar, you have titles specified using ""!"". The number of ""!"" corresponds to the title level.
 
-!!!! How to add a figure
+!!! How to add a figure
 
 First we are going to organize our folders to have a more good and flexible architecture.
 Create a folder named ==figures== under your project directory. This folder is going to contain all the figures of the project.
@@ -231,13 +231,13 @@ The principal elements of this syntax ""+"", "">"" and ""file://"".
 ""+"" elements are delimiters. The word before "">"" act as a title. After ""file://"" element you specify the path to the image.
 
 	
-!!!! Links
+!!! Links
 	
 That *Pillar>https://github.com/pillar-markup/pillar* is an external link. ""*"" elements are delimiters and ""Pillar"" stands for link. The part after "">"" is the link location, the cible.
 For internal links, this is the same syntax, link locations only have to finish by .pier or .pillar 
 
 
-!!!! Formatting
+!!! Formatting
 
 To put a text in bold, just write \"\"text\"\". For italic, write \'\'italic\'\'.
 You want underline a word, that is \_\_underlined\_\_.
@@ -297,7 +297,7 @@ Let's change some attributes and modify two capital things.
 I propose ""Pillar Hand On"" as title. For keywords, ""installation, pillar, pharo, smalltalk, syntax"".
 
 One important thing to specify is the ""base_url"" depending on the way you want to distribute your book.
-You want to use Github and have free access to the book via ""https://your_username.github.io/OurBook"", then set ""base_url"" to ""/OurBook"".
+You want to use GitHub and have free access to the book via ""https://your_username.github.io/OurBook"", then set ""base_url"" to ""/OurBook"".
 (We named the repository ""OurBook"").
 
 The new book archetype propose a table of contents element for Html output. So we are going to display the table of contents. 
@@ -336,7 +336,7 @@ deployment process according to your provider.
 When you build your book in Html, generated files are located in ""_result/html"" under the project directory.
 
 
-Or You want to have a free hosting on Github via GitHub Pages. If that, let's automatize this process.
+Or You want to have a free hosting on GitHub via GitHub Pages. If that, let's automatize this process.
 
 The context is:
 - You have a GitHub account
@@ -384,6 +384,7 @@ deploy:
      branch: master
 ]]]
 
+@@note The main objective of this script is to build your book in html (""script:"" section) and deploy it on GitHub via GitHub Pages as provider (""deploy:"" section). Before doing all these stuffs, Travus CI clone and install (""install:"" section) the latest version of Pillar in a linux environment. When the book is generated, Travis get files from ""local_dir"" (_result/html) on ==master== branch and deploy them on ==gh-pages== branch (automatically created by Travis CI and recognized by GitHub as a hosting branch).
 
 
 

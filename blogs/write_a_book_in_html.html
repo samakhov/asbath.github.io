@@ -133,7 +133,7 @@ During this tutorial we are going to manage with these tools.
 </ul>
 
 <ul>
-<li><strong>Github</strong>(<a href="https://github.com">https://github.com</a>) :  for hosting our book on the web. It means you need to have a Github account, if not follow this <a href="https://services.github.com/on-demand/intro-to-github/create-github-account">https://services.github.com/on-demand/intro-to-github/create-github-account</a>.</li>
+<li><strong>GitHub</strong>(<a href="https://github.com">https://github.com</a>) :  for hosting our book on the web. It means you need to have a GitHub account, if not follow this <a href="https://services.github.com/on-demand/intro-to-github/create-github-account">https://services.github.com/on-demand/intro-to-github/create-github-account</a>.</li>
 </ul>
 
 <ul>
@@ -158,7 +158,7 @@ So our chapters are:
 <h3>Installation</h3>
 
 <p>
-Pillar project is available on Github. So we are going to clone it and build from sources.
+Pillar project is available on GitHub. So we are going to clone it and build from sources.
 </p>
 <figure><pre><code class="bash">#for SSH cloning
 $ git clone git@github.com:pillar-markup/pillar.git -b dev-7
@@ -195,17 +195,17 @@ We currently have all tools for generating Html files from pillar.
 <p>
 We are going to follow these steps:
 </p><ul>
-<li>Create a repository on Github</li>
+<li>Create a repository on GitHub</li>
 <li>Clone that empty repository</li>
 <li>Choose an archetype and install it on that repo</li>
 <li>Write some chapters of the book</li>
 <li>Update <code>pillar.conf</code></li>
 <li>Configure Travis</li>
-<li>Publish book on Github</li>
+<li>Publish book on GitHub</li>
 </ul>
 
 
-<h4>Create a Github repository</h4>
+<h4>Create a GitHub repository</h4>
 
 <p>
 We choose to name our repository as <strong>OurBook</strong>.
@@ -326,7 +326,7 @@ We have all the architecture to start writing our chapters. These chapters are g
 <p>
 Just create a file named <code>PillarInstallation.pillar</code> under <strong>Chapters</strong> directory and put this content in.
 </p>
-<figure><pre><code>	!!! Pillar Installation
+<figure><pre><code>	!! Pillar Installation
 
 	A complete Pillar installation process.
 
@@ -375,11 +375,11 @@ After registering this file, update <code>index.pillar</code>. Add the following
 <p>
 Let's propose a chapter showing more Pillar syntax.
 </p>
-<figure><pre><code>!!! Pillar Syntax
+<figure><pre><code>!! Pillar Syntax
 	
 In Pillar, you have titles specified using &quot;&quot;!&quot;&quot;. The number of &quot;&quot;!&quot;&quot; corresponds to the title level.
 
-!!!! How to add a figure
+!!! How to add a figure
 
 First we are going to organize our folders to have a more good and flexible architecture.
 Create a folder named ==figures== under your project directory. This folder is going to contain all the figures of the project.
@@ -390,13 +390,13 @@ The principal elements of this syntax &quot;&quot;+&quot;&quot;, &quot;&quot;&gt
 &quot;&quot;+&quot;&quot; elements are delimiters. The word before &quot;&quot;&gt;&quot;&quot; act as a title. After &quot;&quot;file://&quot;&quot; element you specify the path to the image.
 
 	
-!!!! Links
+!!! Links
 	
 That *Pillar&gt;https://github.com/pillar-markup/pillar* is an external link. &quot;&quot;*&quot;&quot; elements are delimiters and &quot;&quot;Pillar&quot;&quot; stands for link. The part after &quot;&quot;&gt;&quot;&quot; is the link location, the cible.
 For internal links, this is the same syntax, link locations only have to finish by .pier or .pillar 
 
 
-!!!! Formatting
+!!! Formatting
 
 To put a text in bold, just write \&quot;\&quot;text\&quot;\&quot;. For italic, write \'\'italic\'\'.
 You want underline a word, that is \_\_underlined\_\_.
@@ -456,7 +456,7 @@ I propose <strong>Pillar Hand On</strong> as title. For keywords, <strong>instal
 </p>
 <p>
 One important thing to specify is the <strong>base_url</strong> depending on the way you want to distribute your book.
-You want to use Github and have free access to the book via <strong>https://your_username.github.io/OurBook</strong>, then set <strong>base_url</strong> to <strong>/OurBook</strong>.
+You want to use GitHub and have free access to the book via <strong>https://your_username.github.io/OurBook</strong>, then set <strong>base_url</strong> to <strong>/OurBook</strong>.
 (We named the repository <strong>OurBook</strong>).
 </p>
 <p>
@@ -496,7 +496,7 @@ When you build your book in Html, generated files are located in <strong>_result
 </p>
 
 <p>
-Or You want to have a free hosting on Github via GitHub Pages. If that, let's automatize this process.
+Or You want to have a free hosting on GitHub via GitHub Pages. If that, let's automatize this process.
 </p>
 <p>
 The context is:
@@ -550,7 +550,7 @@ deploy:
    on:
      branch: master</code></pre><figcaption></figcaption></figure>
 
-
+<p class="note">The main objective of this script is to build your book in html (<strong>script:</strong> section) and deploy it on GitHub via GitHub Pages as provider (<strong>deploy:</strong> section). Before doing all these stuffs, Travus CI clone and install (<strong>install:</strong> section) the latest version of Pillar in a linux environment. When the book is generated, Travis get files from <strong>local_dir</strong> (_result/html) on <code>master</code> branch and deploy them on <code>gh-pages</code> branch (automatically created by Travis CI and recognized by GitHub as a hosting branch).</p>
 
 
 <h4>Publish On GitHub</h4>
