@@ -345,16 +345,16 @@ The context is:
 - You want this process : write your ==.pillar== files, commit on GitHub, have your books updated on the web
 - You don't have a Travis account and don't know how it works
 
-Your are in that context, follow this *quick start for Travis>quick_start_travis.pillar*. It will help you create a Travis account linked to your GithHub account.
-By following the tutorial, you configure Travis on your project.
+Your are in that context, follow this *quick start for Travis>quick_start_travis.pillar*. It will help you create a Travis account linked to your GithHub account. By following the tutorial, you configure Travis on your project.
 
-The importants things you have to remember:
+
+The importants things you need to remember:
 - Activate the project in Travis
-- Generate a token in GitHub and Set it as variable in Travis
+- Generate a token in GitHub and set it as variable in Travis
 - Check if GitHub Pages is activated on the good branch
 - Create a ==.travis.yml== in your project (at the root)
 
-In the ==.travis.yml== file, let's put this content.
+In ==.travis.yml== file, let's put this content.
 
 [[[
 language: smalltalk
