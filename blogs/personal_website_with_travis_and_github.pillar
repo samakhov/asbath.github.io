@@ -76,3 +76,37 @@ Let's proceed following these steps:
 
 Your GitHub repository is now created and is empty (Just only a README.md file and .gitignore).
 +GitHub repository>file://figures/created.png+
+
+
+
+!! Clone the repository
+
+Now the repository is created, clone it to your local machine.
+
+Choose a directory anywhere in your machine and clone your repository.
+
+@@note :  this part means you have git command line tool installed. If not, follow *this>https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/*.
+
+[[[
+#SSH
+$ git clone git@github.com:Your_github_username/Your_github_username.github.io.git
+#HTTPS
+$ git clone https://github.com/Your_github_username/Your_github_username.github.io.git
+]]]
+
+
+
+!! Install ""academic""
+
+As you are building a website, you should install academic archetype.
+
+[[[
+$ cd Your_github_username.github.io
+$ pillar archetype academic
+]]]
+
+@@note The last command could generate errors.
+-pillar: command not recognized. Check the path in your .bashrc or .zshrc.
+-archetype: is not a valid command. Maybe, you have another program with the same name pillar on your machine. Try to remove it or change the path order like this ""export PILLAR_HOME="~/.pillar/build:$PATH"""
+-book does not exist. Check if a repository ==book== is present under ==.pillar/archetypes==, if not re-run ==./scripts/build.sh==
+
