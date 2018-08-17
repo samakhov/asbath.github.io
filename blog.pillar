@@ -7,4 +7,4 @@
 
 Here is a collection of tutorials concerning some of my works. Main domains are Pillar, Travis, Building a Website, Publish a Pillar Book.
 
-${docList:path=blogs|sort=date|limit=4}$
+${docList:path=blogs|sort=date|limit=5}$
