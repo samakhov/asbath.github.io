@@ -1,3 +1,18 @@
 {
-	"title": "Personal Website Using Travis CI and GitHub"
+	"title": "Personal Website Using Travis CI and GitHub",
+	"template": "blog.mustache"
 }
+
+
+!! Personal Website Using Travis CI and GitHub
+
+This tutorial shows how to put into place a personal website using Pillar, and automatically deploy it using GitHub Pages and Travis CI.
+
+Before going forward, let's precise the context;
+- You have an idea of Pillar Syntax
+- You have a GitHub account
+- You don't have a website located at ==https://your_github_username.github.io==
+- You don't have a Travis (or Have one : no matter)
+
+
+
