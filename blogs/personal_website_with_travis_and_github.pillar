@@ -12,7 +12,67 @@ Before going forward, let's precise the context;
 - You have an idea of Pillar Syntax
 - You have a GitHub account
 - You don't have a website located at ==https://your_github_username.github.io==
-- You don't have a Travis (or Have one : no matter)
+- You don't have a Travis account (or Have one : no matter)
+
+
+You don't know how to write a Pillar document, you have a cheatsheet at *https://squarebarcketsassociates.github.io/Booklet-PublishingAPillarBooklet/CheatSheet.html*. No GitHub account, have a look *there>https://www.wikihow.com/Create-an-Account-on-GitHub*. In this tutorial, you need a Travis account linked to your GitHub one. Then after creating your GitHub account, follow the first part of *this>quick_start_travis.pillar* to set up a linked Travis account.
+
+Then you are here to build your personal website and access it via ==https://your_github_username.github.io==. 
+
+@@note Let's explain our choices. With a GitHub account, you have some advantages or possibilities. One of these advantages is a free hosting service ""GitHub Pages"" provided via ==https://your_github_username.github.io==. And you can build other websites based on that url like ==https://your_github_username.github.io/myProject==. Read more about *GitHub Pages>https://pages.github.com/*.
+
+
+The tutorial will go through these steps:
+- Install Pillar
+- Create a Github Repository for the website
+- Clone the repository
+- Install ""academic"" archetype
+- Edit website pages and configuration
+- Configure Travis CI
+- Push On GitHub
 
 
 
+!! Install Pillar
+
+If you don't have Pillar installed, follow these command lines.
+
+[[[
+#clone latest Pillar version
+#for SSH cloning
+$ git clone git@github.com:pillar-markup/pillar.git -b dev-7
+#for HTTPS cloning
+$ git clone https://github.com/pillar-markup/pillar.git -b dev-7
+
+$ cd pillar
+#start installation process
+$ ./scripts/build.sh
+
+#add pillar command in the PATH environment variable
+$ cd ..
+$ mv pillar ~/.pillar
+# update path in your .bashrc or .zshrc
+$ export PILLAR_HOME="$HOME/.pillar/build"
+$ export PATH="$PATH:$PILLAR_HOME"
+]]]
+
+
+!! Create GitHub repository
+
+One important thing here, is that you should  name the repository as ""Your_github_username.github.io"" in order to have your website available and updated everytime you commit.
+
+Let's proceed following these steps:
+
+- In the upper-right corner of any page, click ""+"", and then click ""New repository"" as: 
++New repository>file://figures/new.png+
+- Type a name for your repository ""Your_github_username.github.io"".
+- Optionally, add a description for your repository like "My Personal Website".
+
++Filling all required information>file://figures/creating.png+
+
+- Select ""Initialize this repository with a README"".
+- Add .gitignore by selecting Smalltalk as default language.
+- Click ""Create repository"" to finish.
+
+Your GitHub repository is now created and is empty (Just only a README.md file and .gitignore).
++GitHub repository>file://figures/created.png+
