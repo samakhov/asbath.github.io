@@ -406,3 +406,9 @@ After pushing your book on GitHub, Travis trigger that commit and start building
 Few minutes after, your book will be available at ""https://your_username.github.io/OurBook"".
 
 @@note If you start working in local on your machine without creating a GitHub repository, you should create one now. And push your files on that repository.
+
+
+Your book looks like 
+*Our Book>file://figures/our_book_finished.png*
+
+
