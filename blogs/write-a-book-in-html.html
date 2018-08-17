@@ -366,9 +366,7 @@ Just create a file named <code>PillarInstallation.pillar</code> under <strong>Ch
 
 	We currently have all tools for generating Html files from pillar.</code></pre><figcaption></figcaption></figure>
 
-<p class="note">We are going to explain a bite pillar syntax. </p>
-<p>
-These elements <strong>[[[...]]]</strong> are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar).
+<p class="note">We are going to explain a bite pillar syntax. These elements <strong>[[[...]]]</strong> are for declaring a code blocks. It generally used to express some lines of code in any language (bash, javascript, pillar).</p><p>
 According to the archetype, code blocks can be colored or other effect. Actually pillar code blocks are testable (only for smalltalk code), we check if our expressions ar correct. 
 Have a look here(coming soon).
 </p>
@@ -380,7 +378,7 @@ After registering this file, update <code>index.pillar</code>. Add the following
 </p>
 <figure><pre><code>	${inputFile:path=Chapters/PillarInstallation.pillar}$</code></pre><figcaption></figcaption></figure>
 
-<p class="note">this is an annotation. During Pillar compilation, the annotation will be replaced by <code>PillarInstallation.pillar</code> contents. The file location is specified using <strong>path</strong>. Everytime we are going to add a new chapter, we are going to add the chapter in <code>index.pillar</code> by doing the above manipulation.</p>
+<p class="note">This is an annotation. During Pillar compilation, the annotation will be replaced by <code>PillarInstallation.pillar</code> contents. The file location is specified using <strong>path</strong>. Everytime we are going to add a new chapter, we are going to add the chapter in <code>index.pillar</code> by doing the above manipulation.</p>
 
 <p>
 <strong>Add A New Chapter</strong>
@@ -565,10 +563,27 @@ deploy:
      branch: master</code></pre><figcaption></figcaption></figure>
 
 
+
+
 <h4>Publish On GitHub</h4>
 
+<p>
+This last part is about publishing your files on your GitHub repository. Normally the repository should already exists.
+The directory which you are working in has been cloned from that repository.
+So you only have to follow below commands.
+</p>
 
+<figure><pre><code># go to your project directory and type these commands
+# add all files
+$ git add .
+$ git commit -m &quot;all chapters implemented&quot;
+$ git push</code></pre><figcaption></figcaption></figure>
 
+<p>
+After pushing your book on GitHub, Travis trigger that commit and start building the website.
+Few minutes after, your book will be available at <strong>https://your_username.github.io/OurBook</strong>.
+</p>
+<p class="note">If you start working in local on your machine without creating a GitHub repository, you should create one now. And push your files on that repository.</p>
   		</div>
 		</div>
 		<div class="row justify-content-md-center">
