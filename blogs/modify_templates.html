@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="theme" content="hugo-academic">
     <meta name="theme-color" content="primary">
-	<title></title>
+	<title>How to modify academic templates</title>
 
     <!-- Highlight js -->
     <link rel="stylesheet" href="/_support/html/highlightjs/styles/default.css">
@@ -115,41 +115,165 @@
 
 <!-- Projects widget -->
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-	<h1>Blog</h1>
+<div class="container">
+<div class="row">
+  <div class="col-xs-12 col-md-4 section-heading">
+	<h1></h1>
 
-<p>
-Here is a collection of tutorials concerning some of my works. Main domains are Pillar, Travis, Building a Website, Publish a Pillar Book.
-</p>
-<h2>Travis Quick Start</h2>
-
-<p>
-If you are here, this is because you are bored of piece of tutorials trying to show you the way to make your project built by Travis when committing on Github. Or I just send you here from a <a href="https://github.com/pillar-markup/pillar/">Pillar</a>
-tutorial.
-</p><a href="blogs/quick_start_travis.html">Read more</a><h2>Pillar Quick Start</h2>
-
-<p>
-You just want to generate your book in HTML, you know Pillar already, this tutorial is for you.
-</p><a href="blogs/quick_start.html">Read more</a><h2>Personal Website Using Travis CI and GitHub</h2>
-
-<p>
-This tutorial shows how to put into place a personal website using Pillar, and automatically deploy it using GitHub Pages and Travis CI.
-</p><a href="blogs/personal_website_with_travis_and_github.html">Read more</a><h2>How to customize templates</h2>
+    
+	<div id="profile">
+		<div class="portrait" style="background-image: url('images/asbath.png');"></div>
+	
+		<h1>Asbathou Biyalou-Sama</h1>
+		<h3>Intern</h3>
+		<p class="center-text">Inria Lille - Nord Europe</p>
+	</div>
+	
+  </div>
+  <div class="col-xs-12 col-md-8">
+	<h2>How to customize templates</h2>
 
 <p>
 While building website with Pillar using <code>academic</code> archetype, sometimes you may want to change some elements. Then, in this tutorial, we are explaining how <code>academic</code> archetype is working and how to modify it.
-</p><a href="blogs/modify_templates.html">Read more</a><h2>How to build a website with Pillar</h2>
+</p>
+<p>
+<code>academic</code> archetype is a Pillar archetype especially for building static websites (personal ones or for projects) in Pillar.
+</p>
+<p>
+Let's explain the global presentation of an archetype. It is a directory containing other directories like:
+</p>
+<ul>
+<li><strong>sample</strong> directory: this directory contains some pillar files like example of project using this archetype. </li>
+<li><strong>support</strong> directory: this one contains all the css, js, and mustache files which compose the archetype.</li>
+</ul>
 
 <p>
-This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
-</p><a href="blogs/academic_process.html">Read more</a>
-      </div>
-    </div>
-  </div>
-</section>
+For academic archetype, we have something like that
+</p>
+<figure><pre><code>academic\
+  sample\
+    index.pillar
+    pillar.conf
+    projects.pillar
+    publications.pillar
+    toc.pillar
+    research.pillar
+    contacts.pillar
+    avatar.png
+  support\
+    html\
+        css\
+          styles.csss
+          ...
+        fonts\
+          ...
+        hightlightjs\
+          ...
+        img\
+          ...
+        js\
+          ...
+    templates\
+      html\
+        main.mustache
+        blog.mustache
+        fixed_profile.mustache
+        no_profile.mustache</code></pre><figcaption></figcaption></figure>
 
+<ul>
+<li><strong>toc.pilllar</strong> is the file containing the menu of the website.</li>
+</ul>
+
+<p>
+By default, this file looks like this
+</p>
+<figure><pre><code>${inputFile:path=index.pillar}$
+${inputFile:path=projects.pillar}$
+${inputFile:path=research.pillar}$
+${inputFile:path=publications.pillar}$
+${inputFile:path=contacts.pillar}$</code></pre><figcaption></figcaption></figure>
+
+<p class="note">Each input file is representing a menu (page) of your website. Each file needs to contain at least one title (H1 or H2). The Menu builder is just taking the first title founded in a file as menu label. For these kinds of websites with <code>academic</code> you can't have submenus, or you will to modify the menu builder. Then if you want to modify the menu, just modify this template by adding or remove an input annotation.</p>
+<ul>
+<li><code>academic</code> archetype is installed by this command</li>
+</ul>
+<figure><pre><code>$ pillar archetype academic</code></pre><figcaption></figcaption></figure>
+
+
+<h2>Process of the command</h2>
+
+<p>
+This command is just copying files from archetype to project: 
+</p><ul>
+<li>first files in <strong>sample</strong> directory are copied to the root of your project folder. It provides you a starting environment with some contents and configurations.</li>
+<li>in second time, <strong>support</strong> 's files are copied to a <code>_support</code> directory under the project folder with the same structure as in the archetype one's.</li>
+</ul>
+
+<p>
+So after this command, your project looks like this 
+</p><figure><pre><code>your_project\
+  index.pillar
+  pillar.conf
+  projects.pillar
+  publications.pillar
+  toc.pillar
+  research.pillar
+  contacts.pillar
+  avatar.png
+  _support\
+    html\
+      css\
+        styles.csss
+        ...
+      fonts\
+        ...
+      hightlightjs\
+        ...
+      img\
+        ...
+      js\
+        ...
+    templates\
+      html\
+        main.mustache
+        blog.mustache
+        fixed_profile.mustache
+        no_profile.mustache</code></pre><figcaption></figcaption></figure>
+
+<p>
+By default, the <code>main.mustache</code> is the template file used for generating pages. This template is a classic with a profile on the left and page contents on the right.
+</p>
+<p>
+
+<figure>
+	<img src="figures/default.png" alt="Main.mustache presentation"/>
+	<figcaption>Main.mustache presentation</figcaption>
+</figure>
+</p>
+<p>
+You can change template for certain files. To achieve that, add this code at the head of that file.
+</p>
+<figure><pre><code>{
+	&quot;template&quot;: &quot;no_profile.mustache&quot;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+So, that page will be generated with a different template file. In this case, the page won't contain a profile at the left, only contents on the page. When you want to use your own template, just place it at this location &quot;_support/templates/html&quot;
+</p>
+<p>
+
+<figure>
+	<img src="figures/no_profile.png" alt="No profile presentation"/>
+	<figcaption>No profile presentation</figcaption>
+</figure>
+
+</p>
+
+  </div>
+</div>
+</div>
+</section>
+	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
