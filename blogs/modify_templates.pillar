@@ -1,5 +1,6 @@
 {
-	"title": "How to modify academic templates"
+	"title": "How to modify academic templates",
+        "template": "blog.mustache"
 }
 
 !! How to customize templates
