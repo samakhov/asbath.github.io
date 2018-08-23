@@ -1,0 +1,122 @@
+{
+	"title": "How to modify academic templates"
+}
+
+!! How to customize templates
+
+While building website with Pillar using ==academic== archetype, sometimes you may want to change some elements. Then, in this tutorial, we are explaining how ==academic== archetype is working and how to modify it.
+
+==academic== archetype is a Pillar archetype especially for building static websites (personal ones or for projects) in Pillar.
+
+Let's explain the global presentation of an archetype. It is a directory containing other directories like:
+
+- ""sample"" directory: this directory contains some pillar files like example of project using this archetype. 
+- ""support"" directory: this one contains all the css, js, and mustache files which compose the archetype.
+
+For academic archetype, we have something like that
+
+[[[
+academic\
+  sample\
+    index.pillar
+    pillar.conf
+    projects.pillar
+    publications.pillar
+    toc.pillar
+    research.pillar
+    contacts.pillar
+    avatar.png
+  support\
+    html\
+        css\
+          styles.csss
+          ...
+        fonts\
+          ...
+        hightlightjs\
+          ...
+        img\
+          ...
+        js\
+          ...
+    templates\
+      html\
+        main.mustache
+        blog.mustache
+        fixed_profile.mustache
+        no_profile.mustache
+]]]
+
+- ""toc.pilllar"" is the file containing the menu of the website.
+
+By default, this file looks like this
+
+[[[
+${inputFile:path=index.pillar}$
+${inputFile:path=projects.pillar}$
+${inputFile:path=research.pillar}$
+${inputFile:path=publications.pillar}$
+${inputFile:path=contacts.pillar}$
+]]]
+
+@@note Each input file is representing a menu (page) of your website. Each file needs to contain at least one title (H1 or H2). The Menu builder is just taking the first title founded in a file as menu label. For these kinds of websites with ==academic== you can't have submenus, or you will to modify the menu builder. Then if you want to modify the menu, just modify this template by adding or remove an input annotation.
+
+- ==academic== archetype is installed by this command
+[[[
+$ pillar archetype academic
+]]]
+
+
+!! Process of the command
+
+This command is just copying files from archetype to project: 
+- first files in ""sample"" directory are copied to the root of your project folder. It provides you a starting environment with some contents and configurations.
+- in second time, ""support"" 's files are copied to a ==_support== directory under the project folder with the same structure as in the archetype one's.
+
+So after this command, your project looks like this 
+[[[
+your_project\
+  index.pillar
+  pillar.conf
+  projects.pillar
+  publications.pillar
+  toc.pillar
+  research.pillar
+  contacts.pillar
+  avatar.png
+  _support\
+    html\
+      css\
+        styles.csss
+        ...
+      fonts\
+        ...
+      hightlightjs\
+        ...
+      img\
+        ...
+      js\
+        ...
+    templates\
+      html\
+        main.mustache
+        blog.mustache
+        fixed_profile.mustache
+        no_profile.mustache
+]]]
+
+By default, the ==main.mustache== is the template file used for generating pages. This template is a classic with a profile on the left and page contents on the right.
+
++Main.mustache presentation>file://figures/default.png+
+
+You can change template for certain files. To achieve that, add this code at the head of that file.
+
+[[[
+{
+	"template": "no_profile.mustache"
+}
+]]]
+
+So, that page will be generated with a different template file. In this case, the page won't contain a profile at the left, only contents on the page. When you want to use your own template, just place it at this location "_support/templates/html"
+
++No profile presentation>file://figures/no_profile.png+
