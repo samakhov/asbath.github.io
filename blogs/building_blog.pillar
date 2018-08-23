@@ -5,3 +5,13 @@
 
 
 !! How to build a blog with Pillar
+
+Here we are going to learn how to build a blog in Pillar. Building a blog consist of creating a website with articles (with possiblity of writing comments). So the most appropriate archetype for that purpose in Pillar is ==academic==. We are goin to use a special annotation for getting blog files. The ==academic== archetype propose a special template file for articles presentation containing a comment section.
+
+So, let's install ==academic== first:
+
+[[[
+$ pillar archetype academic
+]]]
+
+
