@@ -117,6 +117,8 @@ You can change template for certain files. To achieve that, add this code at the
 }
 ]]]
 
-So, that page will be generated with a different template file. In this case, the page won't contain a profile at the left, only contents on the page. When you want to use your own template, just place it at this location "_support/templates/html"
+So, that page will be generated with a different template file. In this case, the page won't contain a profile at the left, only contents on the page. When you want to use your own template, just place it at this location "_support/templates/html".
 
 +No profile presentation>file://figures/no_profile.png+
+
+@@note The main included css file is ==styles.css==. This file contains principal css rules used in the template. If you are interested in touching the css, you can check for that file.
