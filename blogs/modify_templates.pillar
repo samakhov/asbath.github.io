@@ -120,4 +120,6 @@ So, that page will be generated with a different template file. In this case, th
 
 +No profile presentation>file://figures/no_profile.png+
 
-@@note The main included css file is ==styles.css==. This file contains principal css rules used in the template. If you are interested in touching the css, you can check for that file.
+@@note If you want to completely change the mustache template for all your pages, you can directly specify the template in ==pillar.conf==. The ==blog.mustache== template propose a disqus comment integration. It allows people to comment on your articles.
+
+The main included css file is ==styles.css==. This file contains principal css rules used in the template. If you are interested in touching the css, you can check for that file.
