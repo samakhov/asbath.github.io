@@ -69,7 +69,7 @@ $ pillar archetype academic
 
 
 This command is just copying files from archetype to project: 
-- first files in ""sample"" directory are copied to the root of your project folder. It provides you a starting environment with some contents and configurations.
+- first, files in ""sample"" directory are copied to the root of your project folder. It provides you a starting environment with some contents and configurations.
 - in second time, ""support"" 's files are copied to a ==_support== directory under the project folder with the same structure as in the archetype one's.
 
 So after this command, your project looks like this 
