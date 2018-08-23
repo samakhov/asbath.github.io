@@ -115,23 +115,10 @@
 
 <!-- Projects widget -->
 <section>
-<div class="container">
-<div class="row">
-  <div class="col-xs-12 col-md-4 section-heading">
-	<h1></h1>
-
-    
-	<div id="profile">
-		<div class="portrait" style="background-image: url('images/asbath.png');"></div>
-	
-		<h1>Asbathou Biyalou-Sama</h1>
-		<h3>Intern</h3>
-		<p class="center-text">Inria Lille - Nord Europe</p>
-	</div>
-	
-  </div>
-  <div class="col-xs-12 col-md-8">
-	<h2>How to customize templates</h2>
+	<div class="container">
+		<div class="row">
+  		<div class="col-xs-12 col-md-12">
+			<h2>How to customize templates</h2>
 
 <p>
 While building website with Pillar using <code>academic</code> archetype, sometimes you may want to change some elements. Then, in this tutorial, we are explaining how <code>academic</code> archetype is working and how to modify it.
@@ -258,7 +245,7 @@ You can change template for certain files. To achieve that, add this code at the
 }</code></pre><figcaption></figcaption></figure>
 
 <p>
-So, that page will be generated with a different template file. In this case, the page won't contain a profile at the left, only contents on the page. When you want to use your own template, just place it at this location &quot;_support/templates/html&quot;
+So, that page will be generated with a different template file. In this case, the page won't contain a profile at the left, only contents on the page. When you want to use your own template, just place it at this location &quot;_support/templates/html&quot;.
 </p>
 <p>
 
@@ -266,14 +253,27 @@ So, that page will be generated with a different template file. In this case, th
 	<img src="figures/no_profile.png" alt="No profile presentation"/>
 	<figcaption>No profile presentation</figcaption>
 </figure>
-
 </p>
-
-  </div>
-</div>
-</div>
+<p class="note">The main included css file is <code>styles.css</code>. This file contains principal css rules used in the template. If you are interested in touching the css, you can check for that file.</p>
+  		</div>
+		</div>
+		<div class="row justify-content-md-center">
+    	<div id="disqus_thread"></div>
+  	</div>
+  
+		<script>
+			var disqus_shortname='www-samakhov-github-io';
+ 			(function() { // DON'T EDIT BELOW THIS LINE
+ 			var d = document, s = d.createElement('script');
+    	s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    	s.setAttribute('data-timestamp', +new Date());
+   		(d.head || d.body).appendChild(s);})();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
 </section>
-	
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
