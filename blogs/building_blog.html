@@ -129,9 +129,40 @@ So, let's install <code>academic</code> first:
 <figure><pre><code>$ pillar archetype academic</code></pre><figcaption></figcaption></figure>
 
 <p>
-After that you have a project without blog. The first thing to do is to create a directory at the root of your project, which will contain your blog publications.
-
+After that you have a project without blog. The first thing to do is to create a directory at the root of your project, which will contain your blog publications. So let's create it.
 </p>
+<figure><pre><code>$ mkdir blogs
+
+$ cd blogs</code></pre><figcaption></figcaption></figure>
+
+<p>
+Now create some pillar files under <strong>blogs</strong> folder.
+</p>
+<p>
+The principal annotation we are going to use in order to have our publications displayed is <code>docList</code>. This annotation takes a certain number of files from a specified directory and presents them like some abstracts and links to complete articles. The main parameters of this article are:
+</p><ul>
+<li><code>path</code>: this parameter specify the path to the directory containing files to be published.</li>
+<li><code>limit</code>: this one is for the number of files to take into account.</li>
+<li><code>sort</code>: to specify the way files are going to be displayed. For the moment you can sort by name (in alphabetical order, ascending), by date (last modification date, the latest is the first to be displayed).</li>
+<li><code>templates</code>: this parameter is quite interesting, you specify the presentation you want your files to have. Then you propose a template and abstracts will be generated using that template, or those templates. Because you can specify many templates. If you specify 2 templates, and you have more than 4 files to generate, the first file will be generated using the first template, the second one with the second template, the third file will be generated with the first template and the next one with the second template and so on.</li>
+</ul>
+
+
+<p>
+Let's check for some files, just put this line in your <code>index.pillar</code> file at the root of your project.
+</p><figure><pre><code>
+${docList:path=blogs|limit=3|sort=date|templates=#('templates/article1.mustache')}$</code></pre><figcaption></figcaption></figure>
+
+<p>
+After this, modify the <code>pillar.conf</code> to add the appropriate transformer in generation procees.
+</p>
+<figure><pre><code>...: .....,
+&quot;plugins&quot;: [&quot;PRDocumentListTransformer&quot;],
+
+.....
+
+.....</code></pre><figcaption></figcaption></figure>
+
   		</div>
 		</div>
 		<div class="row justify-content-md-center">
