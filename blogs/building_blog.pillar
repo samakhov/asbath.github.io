@@ -49,3 +49,7 @@ After this, modify the ==pillar.conf== to add the appropriate transformer in gen
 .....
 
 ]]]
+
+Build your project and you will get a list of abstracts referencing your articles.
+
+To be reviewed (small version).
