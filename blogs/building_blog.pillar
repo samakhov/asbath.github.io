@@ -14,4 +14,4 @@ So, let's install ==academic== first:
 $ pillar archetype academic
 ]]]
 
-
+After that you have a project without blog. The first thing to do is to create a directory at the root of your project, which will contain your blog publications.
