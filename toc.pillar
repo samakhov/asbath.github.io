@@ -3,3 +3,4 @@ ${inputFile:path=index.pillar}$
 ${inputFile:path=projects.pillar}$
 ${inputFile:path=coordinates.pillar}$
 ${inputFile:path=blog.pillar}$
+${inputFile:path=books.pillar}$
