@@ -1,0 +1,7 @@
+{"pic":"couverture.gif"}
+
+!! *La programmation : une approche fonctionnelle et recursive avec Scheme>http://sdmeta.gforge.inria.fr/Books/Scheme/book.html*
+
+L. Arditi and S. Ducasse, Eyrolles, 1996.
+
+This book explains how recursion works, how do you build recursive functions in a way that you are sure that they works. The contents of this book was used in first and second year at the University of Nice-Sophia Antipolis where we had a lot of fun to teach.

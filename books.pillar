@@ -1,0 +1,10 @@
+{
+	"htmlWriter": #html,
+	"template": "no_profile.mustache"
+}
+
+! Books
+
+Over the years I wrote the following books. I enjoyed it even if this is always more time consuming than what we would like. I also really have lot of fun writing columns because this is a completely different exercises than scientific papers.
+
+${docList:path=books|sort=date|limit=6|templates=#('templates/docArticle.mustache')}$
