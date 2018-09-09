@@ -1,5 +1,4 @@
 {
-	"htmlWriter": #html,
 	"template": "no_profile.mustache"
 }
 
