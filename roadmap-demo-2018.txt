@@ -1,0 +1,6 @@
+- Small theory on Pillar
+- Show my website
+- Add Blog to it
+- Explain a bite the relation with Travis CI (show .travis.yml to help you explain)
+- Show books page and code, explain the templates attribute
+- And that's all
