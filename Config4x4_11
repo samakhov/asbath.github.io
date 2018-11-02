@@ -1,0 +1,10 @@
+INPUT:
+4
+4
+p pp
+ p
+PP
+  PP
+
+OUTPUT:
+11
